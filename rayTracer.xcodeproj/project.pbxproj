@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6B5F6A6027F189EB00018DCA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A5F27F189EB00018DCA /* main.cpp */; };
-		6B5F6A6927F19A4500018DCA /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A6827F19A4500018DCA /* color.cpp */; };
 		6B5F6A6C27F19A6200018DCA /* scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A6A27F19A6200018DCA /* scene.cpp */; };
 		6B5F6A6F27F19B1300018DCA /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A6D27F19B1300018DCA /* camera.cpp */; };
 		6B5F6A7227F19B2500018DCA /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7027F19B2500018DCA /* object.cpp */; };
 		6B5F6A7527F19B7200018DCA /* vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7327F19B7200018DCA /* vector3.cpp */; };
+		6B5F6A7B27F21ADD00018DCA /* material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7927F21ADD00018DCA /* material.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,8 +30,6 @@
 /* Begin PBXFileReference section */
 		6B5F6A5C27F189EB00018DCA /* rayTracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = rayTracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5F6A5F27F189EB00018DCA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		6B5F6A6727F199D600018DCA /* color.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = color.hpp; sourceTree = "<group>"; };
-		6B5F6A6827F19A4500018DCA /* color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = color.cpp; sourceTree = "<group>"; };
 		6B5F6A6A27F19A6200018DCA /* scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = scene.cpp; sourceTree = "<group>"; };
 		6B5F6A6B27F19A6200018DCA /* scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = scene.hpp; sourceTree = "<group>"; };
 		6B5F6A6D27F19B1300018DCA /* camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
@@ -40,6 +38,8 @@
 		6B5F6A7127F19B2500018DCA /* object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = object.hpp; sourceTree = "<group>"; };
 		6B5F6A7327F19B7200018DCA /* vector3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vector3.cpp; sourceTree = "<group>"; };
 		6B5F6A7427F19B7200018DCA /* vector3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vector3.hpp; sourceTree = "<group>"; };
+		6B5F6A7927F21ADD00018DCA /* material.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = material.cpp; sourceTree = "<group>"; };
+		6B5F6A7A27F21ADD00018DCA /* material.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = material.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,14 +73,14 @@
 			isa = PBXGroup;
 			children = (
 				6B5F6A5F27F189EB00018DCA /* main.cpp */,
-				6B5F6A6727F199D600018DCA /* color.hpp */,
-				6B5F6A6827F19A4500018DCA /* color.cpp */,
+				6B5F6A7927F21ADD00018DCA /* material.cpp */,
+				6B5F6A7A27F21ADD00018DCA /* material.hpp */,
 				6B5F6A6A27F19A6200018DCA /* scene.cpp */,
 				6B5F6A6B27F19A6200018DCA /* scene.hpp */,
 				6B5F6A6D27F19B1300018DCA /* camera.cpp */,
 				6B5F6A6E27F19B1300018DCA /* camera.hpp */,
-				6B5F6A7027F19B2500018DCA /* object.cpp */,
 				6B5F6A7127F19B2500018DCA /* object.hpp */,
+				6B5F6A7027F19B2500018DCA /* object.cpp */,
 				6B5F6A7327F19B7200018DCA /* vector3.cpp */,
 				6B5F6A7427F19B7200018DCA /* vector3.hpp */,
 			);
@@ -145,8 +145,8 @@
 			files = (
 				6B5F6A6F27F19B1300018DCA /* camera.cpp in Sources */,
 				6B5F6A6027F189EB00018DCA /* main.cpp in Sources */,
+				6B5F6A7B27F21ADD00018DCA /* material.cpp in Sources */,
 				6B5F6A6C27F19A6200018DCA /* scene.cpp in Sources */,
-				6B5F6A6927F19A4500018DCA /* color.cpp in Sources */,
 				6B5F6A7527F19B7200018DCA /* vector3.cpp in Sources */,
 				6B5F6A7227F19B2500018DCA /* object.cpp in Sources */,
 			);
