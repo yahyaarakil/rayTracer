@@ -12,17 +12,46 @@
 #include "object.hpp"
 #include "camera.hpp"
 #include "material.hpp"
+#include "pointLight.hpp"
+#include "vertexList.hpp"
+#include "utilities.hpp"
 #include <vector>
+#include <stdio.h>
+#include <map>
+#include <fstream>
+#include <string>
+
+#define SCENE_REQUIRED 5
 
 class Scene{
-private:
+public:
+    Camera camera;
+    int validationCode;
     Vector3 backgroundColor;
     Vector3 ambientLight;
     int maxRecursionDepth;
     float shadowRayEpsilon;
+    void serializeToFile(const char*);
+    void deserializeFromFile(const char*);
+    std::map<int, Material> materials;
+    std::vector<PointLight> pointLights;
+    std::vector<VertexList> vertexLists;
     
-    std::vector<Material> materials;
-    std::vector<Object> objects;
+    Scene();
+    Scene(const char*);
+    
+private:
+    void parseBackgroundColor(const std::vector<std::string>&);
+    void parseMaxRecursionDepth(const std::vector<std::string>&);
+    void parseShadowRayEpsilon(const std::vector<std::string>&);
+    void parseCamera(const std::vector<std::string>&);
+    void parseMaterial(const std::vector<std::string>&);
+    void parseAmbientLight(const std::vector<std::string>&);
+    void parsePointLight(const std::vector<std::string>&);
+    void parseVertexList(std::vector<std::string>&);
+    void parseSphere(const std::vector<std::string>&);
+    void parseTriangle(const std::vector<std::string>&);
+    void parseMesh(const std::vector<std::string>&);
 };
 
 #endif /* scene_hpp */

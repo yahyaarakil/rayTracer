@@ -8,24 +8,29 @@
 #include <iostream>
 #include "vector3.hpp"
 #include "object.hpp"
+#include "camera.hpp"
+#include "scene.hpp"
 
 std::ostream& operator<<(std::ostream& stream, const Vector3& vector){
     stream << "<" << vector.x << ", " << vector.y << ", " << vector.z << ">";
     return stream;
 }
 
-class Object2 : public Object{
-public:
-    void print() override {
-        
-    }
-};
-
 int main(int argc, const char * argv[]) {
-    Vector3 a(1, 2, 3);
+    if (argc != 2) {
+        std::cout << "Invalid number of arguments!\nFormat Raytracer <input_file>" << std::endl;
+        return -1;
+    }
     
-    Vector3 b;
+    std::cout << "Loading scene from " << argv[1] << std::endl;
+    Scene scene(argv[1]);
     
-    std::cout<< b << std::endl;
+    if (scene.validationCode != 0) {
+        std::cout << "Failed to open " << argv[1] << std::endl;
+        return scene.validationCode;
+    }
+    std::cout << "Scene Loaded" << std::endl;
+    
+    
     return 0;
 }

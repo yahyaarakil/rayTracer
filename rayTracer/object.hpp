@@ -19,6 +19,7 @@ public:
     Object(float, float, float, float, float, float);
     Object(const Vector3& );
     Object(const Vector3& , const Vector3& );
+    virtual ~Object() = default;
     
     virtual void print() = 0;
 };

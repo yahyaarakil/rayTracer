@@ -17,8 +17,7 @@ public:
     float distance;
     int width, height;
     
-    Camera();
-    Camera(float, float, float, float, float, float, float, float, float, float, float, float, float, float, int, int);
+    void print() override;
 };
 
 #endif /* camera_hpp */

@@ -13,6 +13,9 @@
 		6B5F6A7227F19B2500018DCA /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7027F19B2500018DCA /* object.cpp */; };
 		6B5F6A7527F19B7200018DCA /* vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7327F19B7200018DCA /* vector3.cpp */; };
 		6B5F6A7B27F21ADD00018DCA /* material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7927F21ADD00018DCA /* material.cpp */; };
+		6B5F6A7F27F22B6000018DCA /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7D27F22B6000018DCA /* utilities.cpp */; };
+		6B5F6A8227F2452C00018DCA /* pointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A8027F2452C00018DCA /* pointLight.cpp */; };
+		6B5F6A8827F2489300018DCA /* vertexList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A8627F2489300018DCA /* vertexList.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +43,12 @@
 		6B5F6A7427F19B7200018DCA /* vector3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vector3.hpp; sourceTree = "<group>"; };
 		6B5F6A7927F21ADD00018DCA /* material.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = material.cpp; sourceTree = "<group>"; };
 		6B5F6A7A27F21ADD00018DCA /* material.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = material.hpp; sourceTree = "<group>"; };
+		6B5F6A7D27F22B6000018DCA /* utilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utilities.cpp; sourceTree = "<group>"; };
+		6B5F6A7E27F22B6000018DCA /* utilities.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utilities.hpp; sourceTree = "<group>"; };
+		6B5F6A8027F2452C00018DCA /* pointLight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pointLight.cpp; sourceTree = "<group>"; };
+		6B5F6A8127F2452C00018DCA /* pointLight.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pointLight.hpp; sourceTree = "<group>"; };
+		6B5F6A8627F2489300018DCA /* vertexList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vertexList.cpp; sourceTree = "<group>"; };
+		6B5F6A8727F2489300018DCA /* vertexList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vertexList.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +84,16 @@
 				6B5F6A5F27F189EB00018DCA /* main.cpp */,
 				6B5F6A7927F21ADD00018DCA /* material.cpp */,
 				6B5F6A7A27F21ADD00018DCA /* material.hpp */,
+				6B5F6A7D27F22B6000018DCA /* utilities.cpp */,
+				6B5F6A7E27F22B6000018DCA /* utilities.hpp */,
 				6B5F6A6A27F19A6200018DCA /* scene.cpp */,
 				6B5F6A6B27F19A6200018DCA /* scene.hpp */,
 				6B5F6A6D27F19B1300018DCA /* camera.cpp */,
 				6B5F6A6E27F19B1300018DCA /* camera.hpp */,
+				6B5F6A8027F2452C00018DCA /* pointLight.cpp */,
+				6B5F6A8127F2452C00018DCA /* pointLight.hpp */,
+				6B5F6A8627F2489300018DCA /* vertexList.cpp */,
+				6B5F6A8727F2489300018DCA /* vertexList.hpp */,
 				6B5F6A7127F19B2500018DCA /* object.hpp */,
 				6B5F6A7027F19B2500018DCA /* object.cpp */,
 				6B5F6A7327F19B7200018DCA /* vector3.cpp */,
@@ -144,10 +159,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B5F6A6F27F19B1300018DCA /* camera.cpp in Sources */,
+				6B5F6A8227F2452C00018DCA /* pointLight.cpp in Sources */,
 				6B5F6A6027F189EB00018DCA /* main.cpp in Sources */,
 				6B5F6A7B27F21ADD00018DCA /* material.cpp in Sources */,
 				6B5F6A6C27F19A6200018DCA /* scene.cpp in Sources */,
 				6B5F6A7527F19B7200018DCA /* vector3.cpp in Sources */,
+				6B5F6A7F27F22B6000018DCA /* utilities.cpp in Sources */,
+				6B5F6A8827F2489300018DCA /* vertexList.cpp in Sources */,
 				6B5F6A7227F19B2500018DCA /* object.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
