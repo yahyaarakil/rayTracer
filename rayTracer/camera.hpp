@@ -8,6 +8,17 @@
 #ifndef camera_hpp
 #define camera_hpp
 
+#include "object.hpp"
 
+class Camera : public Object{
+public:
+    Vector3 up;
+    float left, right, bottom, top;
+    float distance;
+    int width, height;
+    
+    Camera();
+    Camera(float, float, float, float, float, float, float, float, float, float, float, float, float, float, int, int);
+};
 
 #endif /* camera_hpp */
