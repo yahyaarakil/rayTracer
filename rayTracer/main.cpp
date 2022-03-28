@@ -6,9 +6,21 @@
 //
 
 #include <iostream>
+#include "vector3.hpp"
+
+std::ostream& operator<<(std::ostream& stream, const Vector3& vector){
+    stream << "<" << vector.x << ", " << vector.y << ", " << vector.z << ">";
+    return stream;
+}
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    Vector3 a(1,3,4);
+    Vector3 b(2,7,-5);
+    
+    Vector3 ab = a * b;
+    std::cout << ab;
+    
+    a += b;
+    std::cout<<std::endl<<a;
     return 0;
 }
