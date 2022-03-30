@@ -8,6 +8,7 @@
 #include <iostream>
 #include "rayTracingRenderer.hpp"
 #include "ppm3.hpp"
+#include "ppm6.hpp"
 
 std::ostream& operator<<(std::ostream& stream, const Vector3& vector){
     stream << "<" << vector.x << ", " << vector.y << ", " << vector.z << ">";
@@ -32,7 +33,7 @@ int main(int argc, const char * argv[]) {
 
     // initializing ray tracing renderer
     std::cout << "Initializing RayTracing Renderer" << std::endl;
-    PPM3File img(scene.camera.width, scene.camera.height, IN_MEMORY);
+    PPM6File img(scene.camera.width, scene.camera.height, IN_MEMORY);
     RayTracingRenderer renderer(scene, .0f, .0f, img);
     if (renderer.validationCode != 0) {
         std::cout << "Failed to initialize renderer" << std::endl;

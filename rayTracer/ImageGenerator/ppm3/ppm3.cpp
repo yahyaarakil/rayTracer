@@ -10,7 +10,7 @@
 int PPM3File::getValidationCode(){
     return this->validationCode;
 }
-PPM3File::PPM3File(int width, int height, PPM3FileMode mode)
+PPM3File::PPM3File(int width, int height, PPMFileMode mode)
 : width(width), height(height), mode(mode), bufferSize(height * width * 3), currentIndex(0), buffer(new unsigned char[width * height * 3]){}
 PPM3File::~PPM3File(){
     delete[] this->buffer;
