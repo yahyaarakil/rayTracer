@@ -7,9 +7,8 @@
 
 #include "pointLight.hpp"
 
-PointLight::PointLight(int index, Vector3 position, Vector3 intensity)
-: Object (position.x, position.y, position.z, 0, 0, 0) {
-    this->index = index;
+PointLight::PointLight(Vector3 position, Vector3 intensity)
+: Object (position) {
     this->intensity = intensity;
 }
 

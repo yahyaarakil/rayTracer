@@ -12,10 +12,9 @@
 
 class PointLight : public Object{
 public:
-    int index;
     Vector3 intensity;
     
-    PointLight(int, Vector3, Vector3);
+    PointLight(Vector3, Vector3);
     void print() override;
 };
 #endif /* pointLight_hpp */

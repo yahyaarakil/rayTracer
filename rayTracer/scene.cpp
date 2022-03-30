@@ -122,8 +122,8 @@ void Scene::parseMaterial(const std::vector<std::string>& chunk){
     sscanf(chunk[1].c_str(), "%d\n", &index);
     sscanf(chunk[5].c_str(), "%f\n", &phong_exp);
 
-    Material material(parseVector3(chunk[2]), parseVector3(chunk[2]),
-                      parseVector3(chunk[2]), parseVector3(chunk[2]), phong_exp);
+    Material material(parseVector3(chunk[2]), parseVector3(chunk[3]),
+                      parseVector3(chunk[4]), parseVector3(chunk[6]), phong_exp);
 
     this->materials.insert(std::pair<int, Material>(index, material));
 }
@@ -133,20 +133,54 @@ void Scene::parseAmbientLight(const std::vector<std::string>& chunk){
 void Scene::parsePointLight(const std::vector<std::string>& chunk){
     int index;
     sscanf(chunk[1].c_str(), "%d\n", &index);
-    PointLight pointLight(index, parseVector3(chunk[2]), parseVector3(chunk[3]));
+    PointLight pointLight(parseVector3(chunk[2]), parseVector3(chunk[3]));
     this->pointLights.push_back(pointLight);
 }
 void Scene::parseVertexList(std::vector<std::string>& chunk){
     chunk.erase(chunk.begin());
-    VertexList vertexList;
+    int i = 1;
     for(std::string& s : chunk){
-        vertexList.vertices.push_back(parseVector3(s));
+        this->vertexList.insert(std::pair<int, Vector3>(i++, parseVector3(s)));
     }
-    this->vertexLists.push_back(vertexList);
 }
 void Scene::parseSphere(const std::vector<std::string>& chunk){
+    int materialIndex, vertexIndex;
+    float radius;
+    sscanf(chunk[2].c_str(), "%d\n", &materialIndex);
+    sscanf(chunk[3].c_str(), "%d\n", &vertexIndex);
+    sscanf(chunk[4].c_str(), "%f\n", &radius);
+    this->spheres.push_back(Sphere(this->materials[materialIndex], this->vertexList[vertexIndex], radius));
 }
 void Scene::parseTriangle(const std::vector<std::string>& chunk){
+    int materialIndex;
+    sscanf(chunk[2].c_str(), "%d\n", &materialIndex);
+    Vector3 vertexIndices = parseVector3(chunk[3]);
+    this->triangles.push_back(Triangle(Vector3(),
+                                       this->vertexList[vertexIndices.x],
+                                       this->vertexList[vertexIndices.y],
+                                       this->vertexList[vertexIndices.z],
+                                       this->materials[materialIndex]));
+    
 }
-void Scene::parseMesh(const std::vector<std::string>& chunk){
+void Scene::parseMesh(std::vector<std::string>& chunk){
+    int materialIndex;
+    sscanf(chunk[2].c_str(), "%d\n", &materialIndex);
+    
+    Vector3 position;
+    
+    Mesh mesh(position, this->materials[materialIndex]);
+    
+    chunk.erase(chunk.begin());
+    chunk.erase(chunk.begin());
+    chunk.erase(chunk.begin());
+    
+    for (std::string s : chunk) {
+        Vector3 vertexIndices = parseVector3(s);
+        mesh.triangles.push_back(Triangle(position,
+                                          this->vertexList[vertexIndices.x],
+                                          this->vertexList[vertexIndices.y],
+                                          this->vertexList[vertexIndices.z],
+                                          this->materials[materialIndex]));
+    }
+    this->meshes.push_back(mesh);
 }

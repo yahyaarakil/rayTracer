@@ -9,16 +9,17 @@
 #define object_hpp
 
 #include "vector3.hpp"
+#include "material.hpp"
+
 class Object{
 public:
     Vector3 position;
-    Vector3 gaze;
+    Material material;
     
     Object();
     Object(float, float, float);
-    Object(float, float, float, float, float, float);
-    Object(const Vector3& );
-    Object(const Vector3& , const Vector3& );
+    Object(const Vector3&);
+    Object(const Vector3&, const Material);
     virtual ~Object() = default;
     
     virtual void print() = 0;

@@ -12,11 +12,12 @@
 
 class Camera : public Object{
 public:
+    Vector3 gaze;
     Vector3 up;
     float left, right, bottom, top;
     float distance;
     int width, height;
-    
+        
     void print() override;
 };
 

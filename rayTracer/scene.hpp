@@ -13,7 +13,9 @@
 #include "camera.hpp"
 #include "material.hpp"
 #include "pointLight.hpp"
-#include "vertexList.hpp"
+#include "sphere.hpp"
+#include "triangle.hpp"
+#include "mesh.hpp"
 #include "utilities.hpp"
 #include <vector>
 #include <stdio.h>
@@ -33,9 +35,13 @@ public:
     float shadowRayEpsilon;
     void serializeToFile(const char*);
     void deserializeFromFile(const char*);
+    
     std::map<int, Material> materials;
+    std::map<int, Vector3> vertexList;
     std::vector<PointLight> pointLights;
-    std::vector<VertexList> vertexLists;
+    std::vector<Sphere> spheres;
+    std::vector<Triangle> triangles;
+    std::vector<Mesh> meshes;
     
     Scene();
     Scene(const char*);
@@ -51,7 +57,7 @@ private:
     void parseVertexList(std::vector<std::string>&);
     void parseSphere(const std::vector<std::string>&);
     void parseTriangle(const std::vector<std::string>&);
-    void parseMesh(const std::vector<std::string>&);
+    void parseMesh(std::vector<std::string>&);
 };
 
 #endif /* scene_hpp */
