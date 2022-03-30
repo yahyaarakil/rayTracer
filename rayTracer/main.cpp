@@ -16,10 +16,19 @@ std::ostream& operator<<(std::ostream& stream, const Vector3& vector){
 }
 
 int main(int argc, const char * argv[]) {
+    bool threading = true, ppm3 = true;
     // parsing arguments
-    if (argc != 2) {
+    if (argc < 2) {
         std::cout << "Invalid number of arguments!\nFormat Raytracer <input_file>" << std::endl;
         return -1;
+    }
+    for (int i = 2; i < argc; ++i) {
+        if (!strcmp(argv[i], "-no_threading")) {
+            threading = false;
+        }
+        else if (!strcmp(argv[i], "-ppm6")) {
+            ppm3 = false;
+        }
     }
 
     // loading scene
@@ -33,8 +42,14 @@ int main(int argc, const char * argv[]) {
 
     // initializing ray tracing renderer
     std::cout << "Initializing RayTracing Renderer" << std::endl;
-    PPM6File img(scene.camera.width, scene.camera.height, IN_MEMORY);
-    RayTracingRenderer renderer(scene, .0f, .0f, img);
+    PPM3File* img;
+    if (ppm3) {
+        img = new PPM3File(scene.camera.width, scene.camera.height, IN_MEMORY);
+    }
+    else {
+        img = new PPM6File(scene.camera.width, scene.camera.height, IN_MEMORY);
+    }
+    RayTracingRenderer renderer(scene, .0f, .0f, *img);
     if (renderer.validationCode != 0) {
         std::cout << "Failed to initialize renderer" << std::endl;
         return scene.validationCode;
@@ -48,7 +63,7 @@ int main(int argc, const char * argv[]) {
     
     // write file
     std::cout << "Writing render to file" << std::endl;
-    img.writeToFile("output1.ppm");
+    img->writeToFile("output1.ppm");
     std::cout << "Writing finished" << std::endl;
     
     // clean up and exit

@@ -15,7 +15,6 @@ Vector3 RayTracingRenderer::determinePixelColor(int i, int j){
 }
 
 int RayTracingRenderer::renderToImage() {
-    printf("%d, %d\n", this->scene.camera.height, this->scene.camera.width);
     for (int i = 0; i < this->scene.camera.height; ++i) {
         for (int j = 0; j < this->scene.camera.width; ++j) {
             Vector3 direction = this->rayGenerator.computeDirection(this->rayGenerator.computeS(i, j));
