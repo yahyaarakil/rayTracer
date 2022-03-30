@@ -87,17 +87,23 @@
 		6B5F6A5E27F189EB00018DCA /* rayTracer */ = {
 			isa = PBXGroup;
 			children = (
+				6B5F6A9627F44FD400018DCA /* Renderer */,
+				6B5F6A9527F44FC800018DCA /* Scene */,
+				6B5F6A9327F44F5400018DCA /* Utilities */,
+				6B5F6A9227F44F3C00018DCA /* ObjectClasses */,
 				6B5F6A5F27F189EB00018DCA /* main.cpp */,
-				6B5F6A7927F21ADD00018DCA /* material.cpp */,
-				6B5F6A7A27F21ADD00018DCA /* material.hpp */,
-				6B5F6A7D27F22B6000018DCA /* utilities.cpp */,
-				6B5F6A7E27F22B6000018DCA /* utilities.hpp */,
+				6B5F6A9427F44F6A00018DCA /* MaterialClasses */,
+			);
+			path = rayTracer;
+			sourceTree = "<group>";
+		};
+		6B5F6A9227F44F3C00018DCA /* ObjectClasses */ = {
+			isa = PBXGroup;
+			children = (
 				6B5F6A8927F33D0D00018DCA /* sphere.cpp */,
 				6B5F6A8A27F33D0D00018DCA /* sphere.hpp */,
 				6B5F6A8C27F3449900018DCA /* triangle.cpp */,
 				6B5F6A8D27F3449900018DCA /* triangle.hpp */,
-				6B5F6A6A27F19A6200018DCA /* scene.cpp */,
-				6B5F6A6B27F19A6200018DCA /* scene.hpp */,
 				6B5F6A6D27F19B1300018DCA /* camera.cpp */,
 				6B5F6A6E27F19B1300018DCA /* camera.hpp */,
 				6B5F6A8027F2452C00018DCA /* pointLight.cpp */,
@@ -106,10 +112,44 @@
 				6B5F6A9027F44C3900018DCA /* mesh.hpp */,
 				6B5F6A7127F19B2500018DCA /* object.hpp */,
 				6B5F6A7027F19B2500018DCA /* object.cpp */,
+			);
+			path = ObjectClasses;
+			sourceTree = "<group>";
+		};
+		6B5F6A9327F44F5400018DCA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6B5F6A7D27F22B6000018DCA /* utilities.cpp */,
+				6B5F6A7E27F22B6000018DCA /* utilities.hpp */,
 				6B5F6A7327F19B7200018DCA /* vector3.cpp */,
 				6B5F6A7427F19B7200018DCA /* vector3.hpp */,
 			);
-			path = rayTracer;
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6B5F6A9427F44F6A00018DCA /* MaterialClasses */ = {
+			isa = PBXGroup;
+			children = (
+				6B5F6A7927F21ADD00018DCA /* material.cpp */,
+				6B5F6A7A27F21ADD00018DCA /* material.hpp */,
+			);
+			path = MaterialClasses;
+			sourceTree = "<group>";
+		};
+		6B5F6A9527F44FC800018DCA /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				6B5F6A6A27F19A6200018DCA /* scene.cpp */,
+				6B5F6A6B27F19A6200018DCA /* scene.hpp */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		6B5F6A9627F44FD400018DCA /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Renderer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
