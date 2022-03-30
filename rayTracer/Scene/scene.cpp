@@ -115,8 +115,6 @@ void Scene::parseCamera(const std::vector<std::string>& chunk){
            &(this->camera.left), &(this->camera.right), &(this->camera.bottom), &(this->camera.top));
     sscanf(chunk[5].c_str(), "%f\n", &(this->camera.distance));
     sscanf(chunk[6].c_str(), "%d %d\n", &(this->camera.width), &(this->camera.height));
-    
-    this->camera.computeVectors();
 }
 void Scene::parseMaterial(const std::vector<std::string>& chunk){
     int index;

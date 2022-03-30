@@ -6,3 +6,10 @@
 //
 
 #include "rayTracingRenderer.hpp"
+
+RayTracingRenderer::RayTracingRenderer(Scene scene){
+    this->rayGenerator = RayGenerator(scene.camera);
+    this->validationCode = 0;
+}
+
+void renderIntoImage(int);

@@ -19,6 +19,7 @@
 		6B5F6A8E27F3449900018DCA /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A8C27F3449900018DCA /* triangle.cpp */; };
 		6B5F6A9127F44C3900018DCA /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A8F27F44C3900018DCA /* mesh.cpp */; };
 		6B5F6A9927F4521D00018DCA /* rayTracingRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9727F4521D00018DCA /* rayTracingRenderer.cpp */; };
+		6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,8 @@
 		6B5F6A9027F44C3900018DCA /* mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mesh.hpp; sourceTree = "<group>"; };
 		6B5F6A9727F4521D00018DCA /* rayTracingRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rayTracingRenderer.cpp; sourceTree = "<group>"; };
 		6B5F6A9827F4521D00018DCA /* rayTracingRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rayTracingRenderer.hpp; sourceTree = "<group>"; };
+		6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rayGenerator.cpp; sourceTree = "<group>"; };
+		6B5F6A9B27F481D100018DCA /* rayGenerator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rayGenerator.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,8 @@
 			children = (
 				6B5F6A9727F4521D00018DCA /* rayTracingRenderer.cpp */,
 				6B5F6A9827F4521D00018DCA /* rayTracingRenderer.hpp */,
+				6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */,
+				6B5F6A9B27F481D100018DCA /* rayGenerator.hpp */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				6B5F6A6C27F19A6200018DCA /* scene.cpp in Sources */,
 				6B5F6A7527F19B7200018DCA /* vector3.cpp in Sources */,
 				6B5F6A9127F44C3900018DCA /* mesh.cpp in Sources */,
+				6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */,
 				6B5F6A7F27F22B6000018DCA /* utilities.cpp in Sources */,
 				6B5F6A9927F4521D00018DCA /* rayTracingRenderer.cpp in Sources */,
 				6B5F6A7227F19B2500018DCA /* object.cpp in Sources */,
