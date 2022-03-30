@@ -17,19 +17,22 @@ std::ostream& operator<<(std::ostream& stream, const Vector3& vector){
 }
 
 int main(int argc, const char * argv[]) {
-    if (argc != 2) {
-        std::cout << "Invalid number of arguments!\nFormat Raytracer <input_file>" << std::endl;
-        return -1;
-    }
+    Vector3 a(1, 2, 3), b(4, 5, 6);
+    Vector3 c;
     
-    std::cout << "Loading scene from " << argv[1] << std::endl;
-    Scene scene(argv[1]);
-    
-    if (scene.validationCode != 0) {
-        std::cout << "Failed to open " << argv[1] << std::endl;
-        return scene.validationCode;
-    }
-    std::cout << "Scene Loaded" << std::endl;
+//    if (argc != 2) {
+//        std::cout << "Invalid number of arguments!\nFormat Raytracer <input_file>" << std::endl;
+//        return -1;
+//    }
+//
+//    std::cout << "Loading scene from " << argv[1] << std::endl;
+//    Scene scene(argv[1]);
+//
+//    if (scene.validationCode != 0) {
+//        std::cout << "Failed to open " << argv[1] << std::endl;
+//        return scene.validationCode;
+//    }
+//    std::cout << "Scene Loaded" << std::endl;
     
     
     return 0;
