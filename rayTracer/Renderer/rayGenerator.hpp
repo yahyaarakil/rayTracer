@@ -13,7 +13,7 @@
 class RayGenerator : public Camera {
 public:
     RayGenerator();
-    RayGenerator(Camera);
+    RayGenerator(Camera, float, float);
 
     Vector3 gaze, up, m, q, v;
     float su, sv;

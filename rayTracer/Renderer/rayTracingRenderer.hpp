@@ -18,7 +18,7 @@ public:
     int validationCode;
     
     RayTracingRenderer() = delete;
-    RayTracingRenderer(Scene);
+    RayTracingRenderer(Scene, float, float);
     
     void renderIntoImage(int);
 };

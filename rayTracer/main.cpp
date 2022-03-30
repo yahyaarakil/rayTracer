@@ -31,7 +31,7 @@ int main(int argc, const char * argv[]) {
     
     // initializing ray tracing renderer
     std::cout << "Initializing RayTracing Renderer" << std::endl;
-    RayTracingRenderer renderer(scene);
+    RayTracingRenderer renderer(scene, .0f, .0f);
     if (renderer.validationCode != 0) {
         std::cout << "Failed to initialize renderer" << std::endl;
         return scene.validationCode;
