@@ -21,6 +21,7 @@
 		6B5F6A9927F4521D00018DCA /* rayTracingRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9727F4521D00018DCA /* rayTracingRenderer.cpp */; };
 		6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */; };
 		6B5F6AA027F48F8800018DCA /* ppm3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9E27F48F8800018DCA /* ppm3.cpp */; };
+		6B5F6AA827F4AA8300018DCA /* renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AA727F4AA8300018DCA /* renderer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +65,9 @@
 		6B5F6A9B27F481D100018DCA /* rayGenerator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rayGenerator.hpp; sourceTree = "<group>"; };
 		6B5F6A9E27F48F8800018DCA /* ppm3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ppm3.cpp; sourceTree = "<group>"; };
 		6B5F6A9F27F48F8800018DCA /* ppm3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ppm3.hpp; sourceTree = "<group>"; };
+		6B5F6AA227F4A57600018DCA /* renderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = renderer.hpp; sourceTree = "<group>"; };
+		6B5F6AA527F4A5C600018DCA /* imageGenerator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = imageGenerator.hpp; sourceTree = "<group>"; };
+		6B5F6AA727F4AA8300018DCA /* renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = renderer.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,8 @@
 				6B5F6A9827F4521D00018DCA /* rayTracingRenderer.hpp */,
 				6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */,
 				6B5F6A9B27F481D100018DCA /* rayGenerator.hpp */,
+				6B5F6AA227F4A57600018DCA /* renderer.hpp */,
+				6B5F6AA727F4AA8300018DCA /* renderer.cpp */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 			children = (
 				6B5F6A9E27F48F8800018DCA /* ppm3.cpp */,
 				6B5F6A9F27F48F8800018DCA /* ppm3.hpp */,
+				6B5F6AA527F4A5C600018DCA /* imageGenerator.hpp */,
 			);
 			path = ImageGenerator;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 				6B5F6A7B27F21ADD00018DCA /* material.cpp in Sources */,
 				6B5F6A8B27F33D0D00018DCA /* sphere.cpp in Sources */,
 				6B5F6A6C27F19A6200018DCA /* scene.cpp in Sources */,
+				6B5F6AA827F4AA8300018DCA /* renderer.cpp in Sources */,
 				6B5F6A7527F19B7200018DCA /* vector3.cpp in Sources */,
 				6B5F6A9127F44C3900018DCA /* mesh.cpp in Sources */,
 				6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */,

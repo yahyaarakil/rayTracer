@@ -10,15 +10,8 @@
 int PPM3File::getValidationCode(){
     return this->validationCode;
 }
-PPM3File::PPM3File(int width, int height, PPM3FileMode mode){
-    this->width = width;
-    this->height = height;
-    this->mode = mode;
-    
-    this->bufferSize = height * width * 3;
-    this->currentIndex = 0;
-    this->buffer = new unsigned char[this->bufferSize];
-}
+PPM3File::PPM3File(int width, int height, PPM3FileMode mode)
+: width(width), height(height), mode(mode), bufferSize(height * width * 3), currentIndex(0), buffer(new unsigned char[width * height * 3]){}
 PPM3File::~PPM3File(){
     delete[] this->buffer;
 }
@@ -41,6 +34,7 @@ int PPM3File::writeToFile(const char* filename){
                 fprintf(filestream, "%d ", this->accessBuffer(i, j, c));
             }
         }
+        fprintf(filestream, "\n");
     }
     fclose(filestream);
     return 0;

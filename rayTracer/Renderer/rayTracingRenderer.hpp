@@ -8,19 +8,20 @@
 #ifndef rayTracingRenderer_hpp
 #define rayTracingRenderer_hpp
 
+#include "renderer.hpp"
 #include "rayGenerator.hpp"
 #include "scene.hpp"
 
-class RayTracingRenderer{
+class RayTracingRenderer : Renderer{
 public:
     RayGenerator rayGenerator;
     Scene scene;
     int validationCode;
     
     RayTracingRenderer() = delete;
-    RayTracingRenderer(Scene, float, float);
+    RayTracingRenderer(Scene, float, float, ImageGenerator&);
     
-    void renderIntoImage(int);
+    int renderToImage() override;
 };
 
 #endif /* rayTracingRenderer_hpp */

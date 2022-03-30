@@ -8,14 +8,14 @@
 #ifndef ppm3_hpp
 #define ppm3_hpp
 
-#include <string>
+#include "imageGenerator.hpp"
 #include <fstream>
 
 #define PPM3COMMENT "Yahya Arakil"
 
 enum PPM3FileMode { IN_MEMORY, IN_FILE };
 
-class PPM3File{
+class PPM3File : public ImageGenerator{
 private:
     int validationCode;
     int width, height;
@@ -36,8 +36,8 @@ public:
     int readFromFile(const char*);
     
     unsigned char& accessBuffer(int, int, int);
-    int writeNextPixel(int, int, int);
-    int resetCursor();
+    int writeNextPixel(int, int, int) override;
+    int resetCursor() override;
 };
 
 #endif /* ppm3_hpp */

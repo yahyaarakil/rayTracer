@@ -15,7 +15,7 @@ public:
     RayGenerator();
     RayGenerator(Camera, float, float);
 
-    Vector3 gaze, up, m, q, v;
+    Vector3 m, q, v;
     float su, sv;
 
     Vector3 computeS(int, int) const;
