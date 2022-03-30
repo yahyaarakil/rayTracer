@@ -20,6 +20,7 @@
 		6B5F6A9127F44C3900018DCA /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A8F27F44C3900018DCA /* mesh.cpp */; };
 		6B5F6A9927F4521D00018DCA /* rayTracingRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9727F4521D00018DCA /* rayTracingRenderer.cpp */; };
 		6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */; };
+		6B5F6AA027F48F8800018DCA /* ppm3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9E27F48F8800018DCA /* ppm3.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +62,8 @@
 		6B5F6A9827F4521D00018DCA /* rayTracingRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rayTracingRenderer.hpp; sourceTree = "<group>"; };
 		6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rayGenerator.cpp; sourceTree = "<group>"; };
 		6B5F6A9B27F481D100018DCA /* rayGenerator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rayGenerator.hpp; sourceTree = "<group>"; };
+		6B5F6A9E27F48F8800018DCA /* ppm3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ppm3.cpp; sourceTree = "<group>"; };
+		6B5F6A9F27F48F8800018DCA /* ppm3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ppm3.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,7 @@
 		6B5F6A5E27F189EB00018DCA /* rayTracer */ = {
 			isa = PBXGroup;
 			children = (
+				6B5F6A9D27F48F6E00018DCA /* ImageGenerator */,
 				6B5F6A9627F44FD400018DCA /* Renderer */,
 				6B5F6A9527F44FC800018DCA /* Scene */,
 				6B5F6A9327F44F5400018DCA /* Utilities */,
@@ -160,6 +164,15 @@
 				6B5F6A9B27F481D100018DCA /* rayGenerator.hpp */,
 			);
 			path = Renderer;
+			sourceTree = "<group>";
+		};
+		6B5F6A9D27F48F6E00018DCA /* ImageGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				6B5F6A9E27F48F8800018DCA /* ppm3.cpp */,
+				6B5F6A9F27F48F8800018DCA /* ppm3.hpp */,
+			);
+			path = ImageGenerator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +244,7 @@
 				6B5F6A7F27F22B6000018DCA /* utilities.cpp in Sources */,
 				6B5F6A9927F4521D00018DCA /* rayTracingRenderer.cpp in Sources */,
 				6B5F6A7227F19B2500018DCA /* object.cpp in Sources */,
+				6B5F6AA027F48F8800018DCA /* ppm3.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
