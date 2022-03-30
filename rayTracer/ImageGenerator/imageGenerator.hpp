@@ -8,9 +8,12 @@
 #ifndef imageGenerator_hpp
 #define imageGenerator_hpp
 
+#include "vector3.hpp"
+
 class ImageGenerator {
 public:
     virtual int writeNextPixel(int, int, int) = 0;
+    virtual int writeNextPixel(const Vector3&) = 0;
     virtual int resetCursor() = 0;
 };
 

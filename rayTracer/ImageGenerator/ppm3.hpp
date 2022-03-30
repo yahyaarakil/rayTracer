@@ -37,6 +37,7 @@ public:
     
     unsigned char& accessBuffer(int, int, int);
     int writeNextPixel(int, int, int) override;
+    int writeNextPixel(const Vector3&) override;
     int resetCursor() override;
 };
 

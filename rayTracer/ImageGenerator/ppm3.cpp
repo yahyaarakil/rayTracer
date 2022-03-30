@@ -56,6 +56,19 @@ int PPM3File::writeNextPixel(int r, int g, int b){
     }
     return -1;
 }
+int PPM3File::writeNextPixel(const Vector3& color){
+    if (this->currentIndex < this->bufferSize) {
+        this->buffer[this->currentIndex] = color.x;
+        this->buffer[this->currentIndex + 1] = color.y;
+        this->buffer[this->currentIndex + 2] = color.z;
+        
+        this->currentIndex += 3;
+        
+        return 0;
+    }
+    return -1;
+}
+
 int PPM3File::resetCursor(){
     this->currentIndex = 0;
     return 0;

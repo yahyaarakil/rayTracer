@@ -9,6 +9,8 @@
 #define rayGenerator_hpp
 
 #include "camera.hpp"
+#include "sphere.hpp"
+#include <cmath>
 
 class RayGenerator : public Camera {
 public:
@@ -16,11 +18,12 @@ public:
     RayGenerator(Camera, float, float);
 
     Vector3 m, q, v;
-    float su, sv;
+    float su, sv, t_min, t_max;
 
     Vector3 computeS(int, int) const;
     Vector3 computeDirection(const Vector3&) const;
     Vector3 computeR(float t, const Vector3&) const;
+    float computeTSphere(const Vector3&, const Sphere&) const;
     
     void computeVectors();
 
@@ -30,6 +33,7 @@ private:
     void computeV();
     void computeQ();
     void computeSuSv();
+    float computeTiSphere(const Vector3&, const Sphere&, int) const;
 };
 
 #endif /* rayGenerator_hpp */
