@@ -17,7 +17,7 @@ PPM3File::~PPM3File(){
 }
 
 unsigned char& PPM3File::accessBuffer(int i, int j, int c){
-    return this->buffer[i * this->width + j * 3 + c];
+    return this->buffer[(i * 3 * this->width) + (j * 3) + c];
 }
 
 int PPM3File::writeToFile(const char* filename){
