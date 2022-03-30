@@ -20,12 +20,16 @@ public:
         
     void print() override;
     Vector3 computeS(int, int) const;
+    Vector3 computeDirection(const Vector3&) const;
+    Vector3 computeR(float t, const Vector3&) const;
     
     void computeM();
     void computeU();
     void computeV();
     void computeQ();
     void computeSuSv();
+    
+    void computeVectors();
 };
 
 #endif /* camera_hpp */
