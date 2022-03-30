@@ -11,6 +11,6 @@ Mesh::Mesh(Vector3 position, Material material)
 : Object (position, material) {
 }
 
-void Mesh::print() {
+void Mesh::parameterize() {
     
 }

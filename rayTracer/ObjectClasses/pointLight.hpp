@@ -15,6 +15,6 @@ public:
     Vector3 intensity;
     
     PointLight(Vector3, Vector3);
-    void print() override;
+    void parameterize() override;
 };
 #endif /* pointLight_hpp */

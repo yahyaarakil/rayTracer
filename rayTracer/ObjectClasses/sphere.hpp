@@ -16,6 +16,6 @@ public:
     
     Sphere();
     Sphere(Material, Vector3, float);
-    void print() override;
+    void parameterize() override;
 };
 #endif /* sphere_hpp */

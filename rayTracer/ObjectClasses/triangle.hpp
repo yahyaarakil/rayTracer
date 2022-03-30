@@ -16,6 +16,6 @@ public:
     
     Triangle();
     Triangle(Vector3, Vector3, Vector3, Vector3, Material);
-    void print() override;
+    void parameterize() override;
 };
 #endif /* triangle_hpp */

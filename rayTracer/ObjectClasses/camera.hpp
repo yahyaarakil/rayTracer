@@ -17,7 +17,7 @@ public:
     float distance;
     int width, height;
         
-    void print() override;
+    void parameterize() override;
 };
 
 #endif /* camera_hpp */

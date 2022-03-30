@@ -31,7 +31,7 @@ public:
     Vector3 operator/(float) const;
     void operator/=(float);
     
-    float operator^(const Vector3&) const;
+    float operator^(const Vector3&) const; // dot product
     
     bool operator==(const Vector3&) const;
     

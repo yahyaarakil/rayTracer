@@ -12,6 +12,6 @@ PointLight::PointLight(Vector3 position, Vector3 intensity)
     this->intensity = intensity;
 }
 
-void PointLight::print() {
+void PointLight::parameterize() {
     
 }

@@ -12,7 +12,7 @@ Triangle::Triangle()
     
 }
 
-void Triangle::print() {
+void Triangle::parameterize() {
     
 }
 

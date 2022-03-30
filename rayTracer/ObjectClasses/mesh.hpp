@@ -17,6 +17,6 @@ public:
     std::vector<Triangle> triangles;
     
     Mesh(Vector3, Material);
-    void print() override;
+    void parameterize() override;
 };
 #endif /* mesh_hpp */

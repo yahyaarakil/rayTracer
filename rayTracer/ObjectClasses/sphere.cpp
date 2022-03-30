@@ -12,7 +12,7 @@ Sphere::Sphere()
     
 }
 
-void Sphere::print() {
+void Sphere::parameterize() {
     
 }
 
