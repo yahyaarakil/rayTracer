@@ -17,7 +17,7 @@ public:
     RayGenerator();
     RayGenerator(Camera, float, float);
 
-    Vector3 m, q, v;
+    Vector3 w, u, v, m, q;
     float su, sv, t_min, t_max;
 
     Vector3 computeS(int, int) const;
@@ -28,9 +28,10 @@ public:
     void computeVectors();
 
 private:
-    void computeM();
+    void computeW();
     void computeU();
     void computeV();
+    void computeM();
     void computeQ();
     void computeSuSv();
     float computeTiSphere(const Vector3&, const Sphere&, int) const;

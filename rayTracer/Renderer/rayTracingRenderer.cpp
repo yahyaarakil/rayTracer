@@ -19,8 +19,6 @@ int RayTracingRenderer::renderToImage() {
     for (int i = 0; i < this->scene.camera.height; ++i) {
         for (int j = 0; j < this->scene.camera.width; ++j) {
             Vector3 direction = this->rayGenerator.computeDirection(this->rayGenerator.computeS(i, j));
-//            Vector3 color = determinePixelColor(i, j);
-//            this->imageGenerator.writeNextPixel(color.x, color.y, color.z);
             for (Sphere sphere : this->scene.spheres) {
                 float t = this->rayGenerator.computeTSphere(direction, sphere);
                 if (t > this->rayGenerator.t_min) {

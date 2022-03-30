@@ -23,28 +23,36 @@ RayGenerator::RayGenerator(Camera camera, float t_min, float t_max){
 }
 RayGenerator::RayGenerator(){}
 
+void RayGenerator::computeW() {
+    this->w = this->gaze;
+}
+void RayGenerator::computeU() {
+    this->u = this->w * this->up;
+}
+void RayGenerator::computeV() {
+    this->v = this->up;
+}
 void RayGenerator::computeM() {
     this->m = this->position + this->gaze * this->distance;
 }
-void RayGenerator::computeV() {
-    this->v = this->up * this->gaze;
-}
 void RayGenerator::computeQ() {
-    this->q = this->m  + this->up * this->left + this->v * this->top;
+    this->q = this->m  + this->u * this->left + this->v * this->top;
 }
 void RayGenerator::computeSuSv() {
     this->su = (this->right - this->left) / this->width;
     this->sv = (this->top - this->bottom) / this->height;
 }
 void RayGenerator::computeVectors() {
-    this->computeM();
+    this->computeW();
+    this->computeU();
     this->computeV();
+    this->computeM();
     this->computeQ();
     this->computeSuSv();
 }
 
 Vector3 RayGenerator::computeS(int i, int j) const {
-    return this->q + this->up * (this->su * (i+0.5f))  - this->v * (this->sv * (j+0.5f));
+    return this->q + this->u * (this->su * (i+0.5f))  - this->v * (this->sv * (j+0.5f));
 }
 Vector3 RayGenerator::computeDirection(const Vector3& s) const {
     return s - this->position;
