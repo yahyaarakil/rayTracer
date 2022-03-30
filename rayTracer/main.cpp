@@ -39,5 +39,18 @@ int main(int argc, const char * argv[]) {
         return scene.validationCode;
     }
     std::cout << "Renderer Initialized" << std::endl;
+    
+    // render
+    std::cout << "Rendering started" << std::endl;
+    renderer.renderToImage();
+    std::cout << "Rendering finished" << std::endl;
+    
+    // write file
+    std::cout << "Writing render to file" << std::endl;
+    img.writeToFile("output1.ppm");
+    std::cout << "Writing finished" << std::endl;
+    
+    // clean up and exit
+    std::cout << "Exiting..." << std::endl;
     return 0;
 }

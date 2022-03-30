@@ -15,13 +15,14 @@
 class RayTracingRenderer : Renderer{
 public:
     RayGenerator rayGenerator;
-    Scene scene;
     int validationCode;
     
     RayTracingRenderer() = delete;
-    RayTracingRenderer(Scene, float, float, ImageGenerator&);
+    RayTracingRenderer(Scene&, float, float, ImageGenerator&);
     
     int renderToImage() override;
+    
+    Vector3 determinePixelColor(int, int);
 };
 
 #endif /* rayTracingRenderer_hpp */

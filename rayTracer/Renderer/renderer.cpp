@@ -7,5 +7,5 @@
 
 #include "renderer.hpp"
 
-Renderer::Renderer(ImageGenerator& imageGenerator)
-: imageGenerator(imageGenerator){}
+Renderer::Renderer(Scene& scene, ImageGenerator& imageGenerator)
+: scene(scene), imageGenerator(imageGenerator){}

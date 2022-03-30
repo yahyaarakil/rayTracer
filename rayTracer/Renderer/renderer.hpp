@@ -9,14 +9,16 @@
 #define renderer_hpp
 
 #include "imageGenerator.hpp"
+#include "scene.hpp"
 
 class Renderer {
-private:
+protected:
     ImageGenerator& imageGenerator;
+    Scene& scene;
 
 public:
     Renderer() = delete;
-    Renderer(ImageGenerator&);
+    Renderer(Scene&, ImageGenerator&);
     virtual int renderToImage() = 0;
 };
 
