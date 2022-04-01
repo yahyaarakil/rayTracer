@@ -20,9 +20,8 @@ Progress::Progress(int total)
     
 void Progress::update(){
     if(this->current == this->divider){
-        float percentage = current*(current10++)*100/(total-1);
         current = 0;
-        std::cout << "\b\b\b"<<percentage <<"%";
+        std::cout << "\b\b\b"<< (current10++)*10 <<"%";
     }
     if(this->current++ == this->divider-1 && this->current10 == 10){
         std::cout << "100%\n";
