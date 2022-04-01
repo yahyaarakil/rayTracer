@@ -24,6 +24,7 @@
 		6B5F6AC227F7595300018DCA /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6ABA27F7595300018DCA /* object.cpp */; };
 		6B5F6AC327F7595300018DCA /* sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6ABC27F7595300018DCA /* sphere.cpp */; };
 		6B5F6AC627F75C7500018DCA /* hit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AC427F75C7400018DCA /* hit.cpp */; };
+		6B5F6AC927F785C400018DCA /* progress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AC727F785C400018DCA /* progress.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,6 +75,8 @@
 		6B5F6ABD27F7595300018DCA /* sphere.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sphere.hpp; sourceTree = "<group>"; };
 		6B5F6AC427F75C7400018DCA /* hit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hit.cpp; sourceTree = "<group>"; };
 		6B5F6AC527F75C7400018DCA /* hit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hit.hpp; sourceTree = "<group>"; };
+		6B5F6AC727F785C400018DCA /* progress.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = progress.cpp; sourceTree = "<group>"; };
+		6B5F6AC827F785C400018DCA /* progress.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = progress.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 				6B5F6A7E27F22B6000018DCA /* utilities.hpp */,
 				6B5F6A7327F19B7200018DCA /* vector3.cpp */,
 				6B5F6A7427F19B7200018DCA /* vector3.hpp */,
+				6B5F6AC727F785C400018DCA /* progress.cpp */,
+				6B5F6AC827F785C400018DCA /* progress.hpp */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			files = (
 				6B5F6AC027F7595300018DCA /* camera.cpp in Sources */,
 				6B5F6A6027F189EB00018DCA /* main.cpp in Sources */,
+				6B5F6AC927F785C400018DCA /* progress.cpp in Sources */,
 				6B5F6AC327F7595300018DCA /* sphere.cpp in Sources */,
 				6B5F6A7B27F21ADD00018DCA /* material.cpp in Sources */,
 				6B5F6A6C27F19A6200018DCA /* scene.cpp in Sources */,

@@ -12,6 +12,7 @@
 #include "rayGenerator.hpp"
 #include "scene.hpp"
 #include "hit.hpp"
+#include "progress.hpp"
 
 class RayTracingRenderer : Renderer{
 public:
