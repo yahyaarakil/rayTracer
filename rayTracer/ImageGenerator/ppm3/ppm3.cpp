@@ -16,7 +16,7 @@ PPM3File::~PPM3File(){
     delete[] this->buffer;
 }
 
-unsigned char& PPM3File::accessBuffer(int i, int j, int c){
+unsigned char& PPM3File::accessBuffer(int j, int i, int c){
     return this->buffer[(i * 3 * this->width) + (j * 3) + c];
 }
 

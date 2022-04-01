@@ -25,10 +25,11 @@ RayGenerator::RayGenerator(Camera camera, float t_min, float t_max)
 RayGenerator::RayGenerator(){}
 
 void RayGenerator::computeW() {
-    this->w = this->gaze;
+    this->w = this->gaze * -1;
 }
 void RayGenerator::computeU() {
     this->u = this->w * this->up;
+    this->u *= -1;
 }
 void RayGenerator::computeV() {
     this->v = this->up;

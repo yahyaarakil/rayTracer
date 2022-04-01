@@ -9,6 +9,7 @@
 #define triangle_hpp
 
 #include "object.hpp"
+#include "utilities.hpp"
 
 class Triangle : public Object{
 public:

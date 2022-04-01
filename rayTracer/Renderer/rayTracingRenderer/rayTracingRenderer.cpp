@@ -31,6 +31,7 @@ Hit RayTracingRenderer::castRay(const Vector3& origin, const Vector3& direction)
 int RayTracingRenderer::renderToImage() {
     for (int i = 0; i < this->scene.camera.height; ++i) {
         for (int j = 0; j < this->scene.camera.width; ++j) {
+            
             Vector3 direction = this->rayGenerator.computeDirection(this->rayGenerator.computeS(i, j));
             Hit hit = castRay(this->rayGenerator.position, direction);
             if (hit.getT() > this->rayGenerator.t_min && hit.getT() < this->rayGenerator.t_max) {
