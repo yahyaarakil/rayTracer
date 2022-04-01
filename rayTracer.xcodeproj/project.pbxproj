@@ -23,6 +23,7 @@
 		6B5F6AC127F7595300018DCA /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AB927F7595300018DCA /* mesh.cpp */; };
 		6B5F6AC227F7595300018DCA /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6ABA27F7595300018DCA /* object.cpp */; };
 		6B5F6AC327F7595300018DCA /* sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6ABC27F7595300018DCA /* sphere.cpp */; };
+		6B5F6AC627F75C7500018DCA /* hit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AC427F75C7400018DCA /* hit.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +72,8 @@
 		6B5F6ABB27F7595300018DCA /* pointLight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pointLight.hpp; sourceTree = "<group>"; };
 		6B5F6ABC27F7595300018DCA /* sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sphere.cpp; sourceTree = "<group>"; };
 		6B5F6ABD27F7595300018DCA /* sphere.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sphere.hpp; sourceTree = "<group>"; };
+		6B5F6AC427F75C7400018DCA /* hit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hit.cpp; sourceTree = "<group>"; };
+		6B5F6AC527F75C7400018DCA /* hit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hit.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +188,8 @@
 		6B5F6AA927F4D3F700018DCA /* rayTracingRenderer */ = {
 			isa = PBXGroup;
 			children = (
+				6B5F6AC427F75C7400018DCA /* hit.cpp */,
+				6B5F6AC527F75C7400018DCA /* hit.hpp */,
 				6B5F6A9727F4521D00018DCA /* rayTracingRenderer.cpp */,
 				6B5F6A9827F4521D00018DCA /* rayTracingRenderer.hpp */,
 				6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */,
@@ -279,6 +284,7 @@
 				6B5F6ABF27F7595300018DCA /* pointLight.cpp in Sources */,
 				6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */,
 				6B5F6A7F27F22B6000018DCA /* utilities.cpp in Sources */,
+				6B5F6AC627F75C7500018DCA /* hit.cpp in Sources */,
 				6B5F6AAE27F4D49000018DCA /* ppm6.cpp in Sources */,
 				6B5F6A9927F4521D00018DCA /* rayTracingRenderer.cpp in Sources */,
 				6B5F6AA027F48F8800018DCA /* ppm3.cpp in Sources */,

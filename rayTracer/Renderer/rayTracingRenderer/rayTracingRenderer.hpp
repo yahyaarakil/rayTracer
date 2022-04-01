@@ -11,6 +11,7 @@
 #include "renderer.hpp"
 #include "rayGenerator.hpp"
 #include "scene.hpp"
+#include "hit.hpp"
 
 class RayTracingRenderer : Renderer{
 public:
@@ -23,6 +24,7 @@ public:
     int renderToImage() override;
     
     Vector3 determinePixelColor(int, int);
+    Hit castRay(const Vector3&, const Vector3&);
 };
 
 #endif /* rayTracingRenderer_hpp */

@@ -23,7 +23,6 @@ public:
     Vector3 computeS(int, int) const;
     Vector3 computeDirection(const Vector3&) const;
     Vector3 computeR(float t, const Vector3&) const;
-    float computeTSphere(const Vector3&, const Sphere&) const;
     
     void computeVectors();
 
@@ -34,7 +33,6 @@ private:
     void computeM();
     void computeQ();
     void computeSuSv();
-    float computeTiSphere(const Vector3&, const Sphere&, int) const;
 };
 
 #endif /* rayGenerator_hpp */

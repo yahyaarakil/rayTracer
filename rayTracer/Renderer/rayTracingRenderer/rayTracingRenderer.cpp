@@ -14,19 +14,30 @@ Vector3 RayTracingRenderer::determinePixelColor(int i, int j){
     return Vector3(255, 0, 0);
 }
 
+Hit RayTracingRenderer::castRay(const Vector3& origin, const Vector3& direction){
+    float min_t = INFINITY, t;
+    Object* objectP = NULL;
+    for (Object* object : this->scene.objects) {
+        t = object->parameterize(this->rayGenerator.position, direction);
+        
+        if (t < min_t){
+            objectP = object;
+            min_t = t;
+        }
+    }
+    return Hit(min_t, objectP);
+}
+
 int RayTracingRenderer::renderToImage() {
     for (int i = 0; i < this->scene.camera.height; ++i) {
         for (int j = 0; j < this->scene.camera.width; ++j) {
             Vector3 direction = this->rayGenerator.computeDirection(this->rayGenerator.computeS(i, j));
-            for (Object* object : this->scene.objects) {
-                float t = this->rayGenerator.computeTSphere(direction, *((Sphere*)object));
-                if (t > this->rayGenerator.t_min) {
-                    this->imageGenerator.writeNextPixel(255, 255, 255);
-                }
-                else {
-                    this->imageGenerator.writeNextPixel(this->scene.backgroundColor);
-                }
-                break;
+            Hit hit = castRay(this->rayGenerator.position, direction);
+            if (hit.getT() > this->rayGenerator.t_min && hit.getT() < this->rayGenerator.t_max) {
+                this->imageGenerator.writeNextPixel(255, 255, 255);
+            }
+            else {
+                this->imageGenerator.writeNextPixel(this->scene.backgroundColor);
             }
         }
     }
