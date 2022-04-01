@@ -15,5 +15,7 @@ public:
     Vector3 a, b, c;
     Triangle(const Vector3&, const Vector3&, const Vector3&, const Vector3&, const Material&);
     float parameterize(const Vector3&, const Vector3&) const override;
+    
+    Vector3 getNormal() const;
 };
 #endif /* triangle_hpp */
