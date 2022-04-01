@@ -175,7 +175,7 @@ void Scene::parseMesh(std::vector<std::string>& chunk){
     
     for (std::string s : chunk) {
         Vector3 vertexIndices = parseVector3(s);
-        mesh->triangles.push_back(Triangle(position,
+        mesh->triangles.push_back(new Triangle(position,
                                           this->vertexList[vertexIndices.x-1],
                                           this->vertexList[vertexIndices.y-1],
                                           this->vertexList[vertexIndices.z-1],
