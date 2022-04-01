@@ -15,6 +15,7 @@
 Progress::Progress(int total)
 : total(total), divider(total/10), current(0), current10(1){
     std::cout << "\b\b\b"<< 0 <<"%";
+    this->start = std::chrono::high_resolution_clock::now();
 }
     
 void Progress::update(){
@@ -23,7 +24,11 @@ void Progress::update(){
         current = 0;
         std::cout << "\b\b\b"<<percentage <<"%";
     }
-    if(this->current++ == this->divider-1 && this->current10 == 10)
-        std::cout << "100%";
+    if(this->current++ == this->divider-1 && this->current10 == 10){
+        std::cout << "100%\n";
+        this->end = std::chrono::high_resolution_clock::now();
+        auto duration = duration_cast<std::chrono::microseconds>(this->end - this->start);
+        std::cout << duration.count()/pow(10, 6) << "s" << std::endl;
+    }
 }
 

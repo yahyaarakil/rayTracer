@@ -35,7 +35,7 @@ int RayTracingRenderer::renderToImage() {
             Vector3 direction = this->rayGenerator.computeDirection(this->rayGenerator.computeS(i, j));
             Hit hit = castRay(this->rayGenerator.position, direction);
             if (hit.getT() > this->rayGenerator.t_min && hit.getT() < this->rayGenerator.t_max) {
-                this->imageGenerator.writeNextPixel(255, 255, 255);
+                this->imageGenerator.writeNextPixel(hit.getObject()->material.diffuse_reflectance * 255);
             }
             else {
                 this->imageGenerator.writeNextPixel(this->scene.backgroundColor);
@@ -44,6 +44,5 @@ int RayTracingRenderer::renderToImage() {
             progress.update();
         }
     }
-    std::cout << std::endl;
     return 0;
 }
