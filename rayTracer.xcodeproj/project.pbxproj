@@ -23,6 +23,7 @@
 		6B5F6AA027F48F8800018DCA /* ppm3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9E27F48F8800018DCA /* ppm3.cpp */; };
 		6B5F6AA827F4AA8300018DCA /* renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AA727F4AA8300018DCA /* renderer.cpp */; };
 		6B5F6AAE27F4D49000018DCA /* ppm6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AAC27F4D49000018DCA /* ppm6.cpp */; };
+		6B5F6AB127F6123000018DCA /* hit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AAF27F6123000018DCA /* hit.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +72,8 @@
 		6B5F6AA727F4AA8300018DCA /* renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = renderer.cpp; sourceTree = "<group>"; };
 		6B5F6AAC27F4D49000018DCA /* ppm6.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ppm6.cpp; sourceTree = "<group>"; };
 		6B5F6AAD27F4D49000018DCA /* ppm6.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ppm6.hpp; sourceTree = "<group>"; };
+		6B5F6AAF27F6123000018DCA /* hit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hit.cpp; sourceTree = "<group>"; };
+		6B5F6AB027F6123000018DCA /* hit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = hit.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,8 @@
 				6B5F6A9827F4521D00018DCA /* rayTracingRenderer.hpp */,
 				6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */,
 				6B5F6A9B27F481D100018DCA /* rayGenerator.hpp */,
+				6B5F6AAF27F6123000018DCA /* hit.cpp */,
+				6B5F6AB027F6123000018DCA /* hit.hpp */,
 			);
 			path = rayTracingRenderer;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				6B5F6A9127F44C3900018DCA /* mesh.cpp in Sources */,
 				6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */,
 				6B5F6A7F27F22B6000018DCA /* utilities.cpp in Sources */,
+				6B5F6AB127F6123000018DCA /* hit.cpp in Sources */,
 				6B5F6AAE27F4D49000018DCA /* ppm6.cpp in Sources */,
 				6B5F6A9927F4521D00018DCA /* rayTracingRenderer.cpp in Sources */,
 				6B5F6A7227F19B2500018DCA /* object.cpp in Sources */,
@@ -387,6 +393,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

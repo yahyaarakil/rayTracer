@@ -7,6 +7,8 @@
 
 #include "camera.hpp"
 
+Camera::Camera()
+: Object(Vector3(0, 0, 0), Material()) {}
 void Camera::parameterize() {
     
 }

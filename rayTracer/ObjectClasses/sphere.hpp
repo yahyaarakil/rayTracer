@@ -13,9 +13,8 @@
 class Sphere : public Object{
 public:
     float radius;
-    
-    Sphere();
-    Sphere(Material, Vector3, float);
+
+    Sphere(const Material&, const Vector3&, float);
     void parameterize() override;
 };
 #endif /* sphere_hpp */

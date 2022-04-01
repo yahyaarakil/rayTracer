@@ -14,7 +14,7 @@ class PointLight : public Object{
 public:
     Vector3 intensity;
     
-    PointLight(Vector3, Vector3);
+    PointLight(const Vector3&, const Vector3&);
     void parameterize() override;
 };
 #endif /* pointLight_hpp */

@@ -11,16 +11,19 @@
 #include "renderer.hpp"
 #include "rayGenerator.hpp"
 #include "scene.hpp"
+#include "hit.hpp"
 
 class RayTracingRenderer : Renderer{
 public:
     RayGenerator rayGenerator;
-    int validationCode;
+    int validationCode, threadCount;
     
     RayTracingRenderer() = delete;
     RayTracingRenderer(Scene&, float, float, ImageGenerator&);
     
+    void computePixel(int, int);
     int renderToImage() override;
+    Hit castRay(int, int);
     
     Vector3 determinePixelColor(int, int);
 };

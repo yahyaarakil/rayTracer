@@ -16,6 +16,8 @@ public:
     float left, right, bottom, top;
     float distance;
     int width, height;
+    
+    Camera();
         
     void parameterize() override;
 };

@@ -17,6 +17,7 @@ std::ostream& operator<<(std::ostream& stream, const Vector3& vector){
 
 int main(int argc, const char * argv[]) {
     bool threading = true, ppm3 = true;
+    const char* outputFilename = NULL;
     // parsing arguments
     if (argc < 2) {
         std::cout << "Invalid number of arguments!\nFormat Raytracer <input_file>" << std::endl;
@@ -29,6 +30,13 @@ int main(int argc, const char * argv[]) {
         else if (!strcmp(argv[i], "-ppm6")) {
             ppm3 = false;
         }
+        else if (!strcmp(argv[i], "-o")) {
+            if (i+1 >= argc) {
+                std::cout << "Please specify output filename when using argument '-o'..." << std::endl;
+                return - 20;
+            }
+            outputFilename = argv[(i++)+1];
+        }
     }
 
     // loading scene
@@ -38,7 +46,7 @@ int main(int argc, const char * argv[]) {
         std::cout << "Failed to open " << argv[1] << std::endl;
         return scene.validationCode;
     }
-    std::cout << "Scene Loaded" << std::endl;
+    std::cout << "Scene loaded" << std::endl;
 
     // initializing ray tracing renderer
     std::cout << "Initializing RayTracing Renderer" << std::endl;
@@ -52,20 +60,41 @@ int main(int argc, const char * argv[]) {
     RayTracingRenderer renderer(scene, .0f, .0f, *img);
     if (renderer.validationCode != 0) {
         std::cout << "Failed to initialize renderer" << std::endl;
-        return scene.validationCode;
+        return renderer.validationCode;
     }
-    std::cout << "Renderer Initialized" << std::endl;
-    
+    std::cout << "Renderer initialized" << std::endl;
+    std::cout << scene.camera.width << "x" << scene.camera.height << std::endl;
+    if (threading) {
+        renderer.threadCount = 4;
+        std::cout << "Threading enabled" << std::endl;
+    }
+    else {
+        renderer.threadCount = 1;
+        std::cout << "Threading disabled" << std::endl;
+    }
+
     // render
     std::cout << "Rendering started" << std::endl;
     renderer.renderToImage();
     std::cout << "Rendering finished" << std::endl;
-    
+
     // write file
-    std::cout << "Writing render to file" << std::endl;
-    img->writeToFile("output1.ppm");
+//    if (outputFilename == NULL) {
+//        char buffer[200];
+//        int number;
+//        for (int i = 0; i < 200 && argv[1][i] != 0 && argv[1][i] != '.'; ++i) {
+//            buffer[i] = argv[1][i];
+//            buffer[i+1] = 0;
+//        }
+//        strcat(buffer, ".ppm");
+//        printf("%s\n", buffer);
+//        printf("%d\n", number);
+//        return 5;
+//    }
+    std::cout << "Writing render to file " << outputFilename << std::endl;
+    img->writeToFile(outputFilename);
     std::cout << "Writing finished" << std::endl;
-    
+
     // clean up and exit
     std::cout << "Exiting..." << std::endl;
     return 0;

@@ -14,12 +14,10 @@
 class Object{
 public:
     Vector3 position;
-    Material material;
+    const Material& material;
     
-    Object();
-    Object(float, float, float);
-    Object(const Vector3&);
-    Object(const Vector3&, const Material);
+    Object() = delete;
+    Object(const Vector3&, const Material&);
     virtual ~Object() = default;
     
     virtual void parameterize() = 0;

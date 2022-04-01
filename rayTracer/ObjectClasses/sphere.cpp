@@ -7,17 +7,9 @@
 
 #include "sphere.hpp"
 
-Sphere::Sphere()
-: Object(){
-    
-}
-
 void Sphere::parameterize() {
     
 }
 
-Sphere::Sphere(Material material, Vector3 position, float radius)
-: Object(position){
-    this->radius = radius;
-    this->material = material;
-}
+Sphere::Sphere(const Material& material, const Vector3& position, float radius)
+: Object(position, material), radius(radius){}

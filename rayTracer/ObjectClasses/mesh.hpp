@@ -16,7 +16,7 @@ class Mesh : public Object{
 public:
     std::vector<Triangle> triangles;
     
-    Mesh(Vector3, Material);
+    Mesh(const Vector3&, const Material&);
     void parameterize() override;
 };
 #endif /* mesh_hpp */

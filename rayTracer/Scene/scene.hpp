@@ -36,14 +36,13 @@ public:
     void serializeToFile(const char*);
     void deserializeFromFile(const char*);
     
-    std::map<int, Material> materials;
+    std::vector<Material*> materials;
     std::map<int, Vector3> vertexList;
-    std::vector<PointLight> pointLights;
-    std::vector<Sphere> spheres;
-    std::vector<Triangle> triangles;
-    std::vector<Mesh> meshes;
+    std::vector<PointLight*> pointLights;
+    std::vector<Object*> objects;
     
     Scene();
+    ~Scene();
     Scene(const char*);
     
 private:

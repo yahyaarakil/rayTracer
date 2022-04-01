@@ -73,7 +73,7 @@ bool Vector3::operator==(const Vector3& other) const {
 }
 
 float Vector3::magnitude() const {
-    return sqrt(this->x * this->x +this->y * this->y +this->z * this->z);
+    return sqrt(this->x * this->x + this->y * this->y + this->z * this->z);
 }
 float Vector3::angle(const Vector3& other) const {
     return acos(((*this)^other) / (this->magnitude() * other.magnitude()));

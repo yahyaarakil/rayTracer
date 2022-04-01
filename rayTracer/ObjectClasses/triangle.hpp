@@ -13,9 +13,7 @@
 class Triangle : public Object{
 public:
     Vector3 a, b, c;
-    
-    Triangle();
-    Triangle(Vector3, Vector3, Vector3, Vector3, Material);
+    Triangle(const Vector3&, const Vector3&, const Vector3&, const Vector3&, const Material&);
     void parameterize() override;
 };
 #endif /* triangle_hpp */
