@@ -10,6 +10,6 @@
 PointLight::PointLight(const Vector3& position, const Vector3& intensity)
 : Object (position, Material()), intensity(intensity) {}
 
-void PointLight::parameterize() {
-    
+float PointLight::parameterize(const Vector3& origin, const Vector3& direction) const {
+    return INFINITY;
 }

@@ -10,6 +10,7 @@
 
 #include "vector3.hpp"
 #include "material.hpp"
+#include <cmath>
 
 class Object{
 public:
@@ -20,7 +21,7 @@ public:
     Object(const Vector3&, const Material&);
     virtual ~Object() = default;
     
-    virtual void parameterize() = 0;
+    virtual float parameterize(const Vector3&, const Vector3&) const = 0;
 };
 
 #endif /* object_hpp */

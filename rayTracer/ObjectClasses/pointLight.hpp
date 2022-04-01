@@ -15,6 +15,6 @@ public:
     Vector3 intensity;
     
     PointLight(const Vector3&, const Vector3&);
-    void parameterize() override;
+    float parameterize(const Vector3&, const Vector3&) const override;
 };
 #endif /* pointLight_hpp */

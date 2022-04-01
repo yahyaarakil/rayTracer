@@ -23,9 +23,9 @@ public:
     
     void computePixel(int, int);
     int renderToImage() override;
-    Hit castRay(int, int);
     
     Vector3 determinePixelColor(int, int);
+    Hit castRay(const Vector3&);
 };
 
 #endif /* rayTracingRenderer_hpp */

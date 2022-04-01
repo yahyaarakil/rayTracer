@@ -13,14 +13,14 @@
 class Hit{
 private:
     float t;
-    Object& object;
+    Object* object;
     
 public:
     Hit() = delete;
-    Hit(float, Object&);
+    Hit(float, Object*);
     
     float getT();
-    Object& getObject();
+    Object* getObject();
 };
 
 #endif /* hit_hpp */

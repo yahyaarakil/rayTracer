@@ -7,7 +7,8 @@
 
 #include "rayGenerator.hpp"
 
-RayGenerator::RayGenerator(Camera camera, float t_min, float t_max){
+RayGenerator::RayGenerator(Camera camera, float t_min, float t_max)
+: t_min(t_min), t_max(t_max){
     this->position = camera.position;
     this->gaze = camera.gaze;
     this->up = camera.up;
@@ -59,22 +60,4 @@ Vector3 RayGenerator::computeDirection(const Vector3& s) const {
 }
 Vector3 RayGenerator::computeR(float t, const Vector3& direction) const {
     return this->position + direction * t;
-}
-
-float RayGenerator::computeTiSphere(const Vector3& direction, const Sphere& sphere, int pm) const {
-    float dd = direction ^ direction;
-    Vector3 omc = this->position - sphere.position;
-    float num = (direction * -1) ^ omc;
-    float uSqrt = sqrt(pow(direction ^ omc, 2) - dd * ((omc ^ omc) - pow(sphere.radius, 2)));
-    
-    uSqrt *= pm;
-    
-    return (num + uSqrt) / dd;
-}
-float RayGenerator::computeTSphere(const Vector3& direction, const Sphere& sphere) const {
-    float t1, t2;
-    t1 = this->computeTiSphere(direction, sphere, 1);
-    t2 = this->computeTiSphere(direction, sphere, -1);
-    
-    return fmin(t1, t2);
 }

@@ -19,7 +19,7 @@ public:
     
     Camera();
         
-    void parameterize() override;
+    float parameterize(const Vector3&, const Vector3&) const override;
 };
 
 #endif /* camera_hpp */

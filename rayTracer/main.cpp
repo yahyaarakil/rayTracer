@@ -57,7 +57,7 @@ int main(int argc, const char * argv[]) {
     else {
         img = new PPM6File(scene.camera.width, scene.camera.height, IN_MEMORY);
     }
-    RayTracingRenderer renderer(scene, .0f, .0f, *img);
+    RayTracingRenderer renderer(scene, .0f, 10, *img);
     if (renderer.validationCode != 0) {
         std::cout << "Failed to initialize renderer" << std::endl;
         return renderer.validationCode;
