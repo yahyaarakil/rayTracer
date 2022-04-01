@@ -7,10 +7,9 @@
 
 #include "mesh.hpp"
 
-Mesh::Mesh(Vector3 position, Material material)
-: Object (position, material) {
-}
+Mesh::Mesh(const Vector3& position, const Material& material)
+: Object (position, material) {}
 
-void Mesh::parameterize() {
-    
+float Mesh::parameterize(const Vector3& origin, const Vector3& direction) const {
+    return INFINITY;
 }

@@ -13,9 +13,11 @@
 class Sphere : public Object{
 public:
     float radius;
+
+    Sphere(const Material&, const Vector3&, float);
+    float parameterize(const Vector3&, const Vector3&) const override;
     
-    Sphere();
-    Sphere(Material, Vector3, float);
-    void parameterize() override;
+private:
+    float computeTiSphere(const Vector3&, const Vector3&, int) const;
 };
 #endif /* sphere_hpp */

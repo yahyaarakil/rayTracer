@@ -9,20 +9,20 @@
 /* Begin PBXBuildFile section */
 		6B5F6A6027F189EB00018DCA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A5F27F189EB00018DCA /* main.cpp */; };
 		6B5F6A6C27F19A6200018DCA /* scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A6A27F19A6200018DCA /* scene.cpp */; };
-		6B5F6A6F27F19B1300018DCA /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A6D27F19B1300018DCA /* camera.cpp */; };
-		6B5F6A7227F19B2500018DCA /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7027F19B2500018DCA /* object.cpp */; };
 		6B5F6A7527F19B7200018DCA /* vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7327F19B7200018DCA /* vector3.cpp */; };
 		6B5F6A7B27F21ADD00018DCA /* material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7927F21ADD00018DCA /* material.cpp */; };
 		6B5F6A7F27F22B6000018DCA /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A7D27F22B6000018DCA /* utilities.cpp */; };
-		6B5F6A8227F2452C00018DCA /* pointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A8027F2452C00018DCA /* pointLight.cpp */; };
-		6B5F6A8B27F33D0D00018DCA /* sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A8927F33D0D00018DCA /* sphere.cpp */; };
-		6B5F6A8E27F3449900018DCA /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A8C27F3449900018DCA /* triangle.cpp */; };
-		6B5F6A9127F44C3900018DCA /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A8F27F44C3900018DCA /* mesh.cpp */; };
 		6B5F6A9927F4521D00018DCA /* rayTracingRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9727F4521D00018DCA /* rayTracingRenderer.cpp */; };
 		6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */; };
 		6B5F6AA027F48F8800018DCA /* ppm3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9E27F48F8800018DCA /* ppm3.cpp */; };
 		6B5F6AA827F4AA8300018DCA /* renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AA727F4AA8300018DCA /* renderer.cpp */; };
 		6B5F6AAE27F4D49000018DCA /* ppm6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AAC27F4D49000018DCA /* ppm6.cpp */; };
+		6B5F6ABE27F7595300018DCA /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AB427F7595300018DCA /* triangle.cpp */; };
+		6B5F6ABF27F7595300018DCA /* pointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AB527F7595300018DCA /* pointLight.cpp */; };
+		6B5F6AC027F7595300018DCA /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AB827F7595300018DCA /* camera.cpp */; };
+		6B5F6AC127F7595300018DCA /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AB927F7595300018DCA /* mesh.cpp */; };
+		6B5F6AC227F7595300018DCA /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6ABA27F7595300018DCA /* object.cpp */; };
+		6B5F6AC327F7595300018DCA /* sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6ABC27F7595300018DCA /* sphere.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,24 +42,12 @@
 		6B5F6A5F27F189EB00018DCA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6B5F6A6A27F19A6200018DCA /* scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = scene.cpp; sourceTree = "<group>"; };
 		6B5F6A6B27F19A6200018DCA /* scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = scene.hpp; sourceTree = "<group>"; };
-		6B5F6A6D27F19B1300018DCA /* camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
-		6B5F6A6E27F19B1300018DCA /* camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = camera.hpp; sourceTree = "<group>"; };
-		6B5F6A7027F19B2500018DCA /* object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = object.cpp; sourceTree = "<group>"; };
-		6B5F6A7127F19B2500018DCA /* object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = object.hpp; sourceTree = "<group>"; };
 		6B5F6A7327F19B7200018DCA /* vector3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vector3.cpp; sourceTree = "<group>"; };
 		6B5F6A7427F19B7200018DCA /* vector3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vector3.hpp; sourceTree = "<group>"; };
 		6B5F6A7927F21ADD00018DCA /* material.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = material.cpp; sourceTree = "<group>"; };
 		6B5F6A7A27F21ADD00018DCA /* material.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = material.hpp; sourceTree = "<group>"; };
 		6B5F6A7D27F22B6000018DCA /* utilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utilities.cpp; sourceTree = "<group>"; };
 		6B5F6A7E27F22B6000018DCA /* utilities.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utilities.hpp; sourceTree = "<group>"; };
-		6B5F6A8027F2452C00018DCA /* pointLight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pointLight.cpp; sourceTree = "<group>"; };
-		6B5F6A8127F2452C00018DCA /* pointLight.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pointLight.hpp; sourceTree = "<group>"; };
-		6B5F6A8927F33D0D00018DCA /* sphere.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sphere.cpp; sourceTree = "<group>"; };
-		6B5F6A8A27F33D0D00018DCA /* sphere.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sphere.hpp; sourceTree = "<group>"; };
-		6B5F6A8C27F3449900018DCA /* triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = triangle.cpp; sourceTree = "<group>"; };
-		6B5F6A8D27F3449900018DCA /* triangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = triangle.hpp; sourceTree = "<group>"; };
-		6B5F6A8F27F44C3900018DCA /* mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mesh.cpp; sourceTree = "<group>"; };
-		6B5F6A9027F44C3900018DCA /* mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mesh.hpp; sourceTree = "<group>"; };
 		6B5F6A9727F4521D00018DCA /* rayTracingRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rayTracingRenderer.cpp; sourceTree = "<group>"; };
 		6B5F6A9827F4521D00018DCA /* rayTracingRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rayTracingRenderer.hpp; sourceTree = "<group>"; };
 		6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rayGenerator.cpp; sourceTree = "<group>"; };
@@ -71,6 +59,18 @@
 		6B5F6AA727F4AA8300018DCA /* renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = renderer.cpp; sourceTree = "<group>"; };
 		6B5F6AAC27F4D49000018DCA /* ppm6.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ppm6.cpp; sourceTree = "<group>"; };
 		6B5F6AAD27F4D49000018DCA /* ppm6.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ppm6.hpp; sourceTree = "<group>"; };
+		6B5F6AB227F7595200018DCA /* triangle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = triangle.hpp; sourceTree = "<group>"; };
+		6B5F6AB327F7595200018DCA /* camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = camera.hpp; sourceTree = "<group>"; };
+		6B5F6AB427F7595300018DCA /* triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangle.cpp; sourceTree = "<group>"; };
+		6B5F6AB527F7595300018DCA /* pointLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pointLight.cpp; sourceTree = "<group>"; };
+		6B5F6AB627F7595300018DCA /* mesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mesh.hpp; sourceTree = "<group>"; };
+		6B5F6AB727F7595300018DCA /* object.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = object.hpp; sourceTree = "<group>"; };
+		6B5F6AB827F7595300018DCA /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
+		6B5F6AB927F7595300018DCA /* mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mesh.cpp; sourceTree = "<group>"; };
+		6B5F6ABA27F7595300018DCA /* object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = object.cpp; sourceTree = "<group>"; };
+		6B5F6ABB27F7595300018DCA /* pointLight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pointLight.hpp; sourceTree = "<group>"; };
+		6B5F6ABC27F7595300018DCA /* sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sphere.cpp; sourceTree = "<group>"; };
+		6B5F6ABD27F7595300018DCA /* sphere.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sphere.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,18 +117,18 @@
 		6B5F6A9227F44F3C00018DCA /* ObjectClasses */ = {
 			isa = PBXGroup;
 			children = (
-				6B5F6A8927F33D0D00018DCA /* sphere.cpp */,
-				6B5F6A8A27F33D0D00018DCA /* sphere.hpp */,
-				6B5F6A8C27F3449900018DCA /* triangle.cpp */,
-				6B5F6A8D27F3449900018DCA /* triangle.hpp */,
-				6B5F6A6D27F19B1300018DCA /* camera.cpp */,
-				6B5F6A6E27F19B1300018DCA /* camera.hpp */,
-				6B5F6A8027F2452C00018DCA /* pointLight.cpp */,
-				6B5F6A8127F2452C00018DCA /* pointLight.hpp */,
-				6B5F6A8F27F44C3900018DCA /* mesh.cpp */,
-				6B5F6A9027F44C3900018DCA /* mesh.hpp */,
-				6B5F6A7127F19B2500018DCA /* object.hpp */,
-				6B5F6A7027F19B2500018DCA /* object.cpp */,
+				6B5F6AB827F7595300018DCA /* camera.cpp */,
+				6B5F6AB327F7595200018DCA /* camera.hpp */,
+				6B5F6AB927F7595300018DCA /* mesh.cpp */,
+				6B5F6AB627F7595300018DCA /* mesh.hpp */,
+				6B5F6ABA27F7595300018DCA /* object.cpp */,
+				6B5F6AB727F7595300018DCA /* object.hpp */,
+				6B5F6AB527F7595300018DCA /* pointLight.cpp */,
+				6B5F6ABB27F7595300018DCA /* pointLight.hpp */,
+				6B5F6ABC27F7595300018DCA /* sphere.cpp */,
+				6B5F6ABD27F7595300018DCA /* sphere.hpp */,
+				6B5F6AB427F7595300018DCA /* triangle.cpp */,
+				6B5F6AB227F7595200018DCA /* triangle.hpp */,
 			);
 			path = ObjectClasses;
 			sourceTree = "<group>";
@@ -267,22 +267,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B5F6A6F27F19B1300018DCA /* camera.cpp in Sources */,
-				6B5F6A8227F2452C00018DCA /* pointLight.cpp in Sources */,
+				6B5F6AC027F7595300018DCA /* camera.cpp in Sources */,
 				6B5F6A6027F189EB00018DCA /* main.cpp in Sources */,
-				6B5F6A8E27F3449900018DCA /* triangle.cpp in Sources */,
+				6B5F6AC327F7595300018DCA /* sphere.cpp in Sources */,
 				6B5F6A7B27F21ADD00018DCA /* material.cpp in Sources */,
-				6B5F6A8B27F33D0D00018DCA /* sphere.cpp in Sources */,
 				6B5F6A6C27F19A6200018DCA /* scene.cpp in Sources */,
+				6B5F6AC227F7595300018DCA /* object.cpp in Sources */,
 				6B5F6AA827F4AA8300018DCA /* renderer.cpp in Sources */,
 				6B5F6A7527F19B7200018DCA /* vector3.cpp in Sources */,
-				6B5F6A9127F44C3900018DCA /* mesh.cpp in Sources */,
+				6B5F6AC127F7595300018DCA /* mesh.cpp in Sources */,
+				6B5F6ABF27F7595300018DCA /* pointLight.cpp in Sources */,
 				6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */,
 				6B5F6A7F27F22B6000018DCA /* utilities.cpp in Sources */,
 				6B5F6AAE27F4D49000018DCA /* ppm6.cpp in Sources */,
 				6B5F6A9927F4521D00018DCA /* rayTracingRenderer.cpp in Sources */,
-				6B5F6A7227F19B2500018DCA /* object.cpp in Sources */,
 				6B5F6AA027F48F8800018DCA /* ppm3.cpp in Sources */,
+				6B5F6ABE27F7595300018DCA /* triangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

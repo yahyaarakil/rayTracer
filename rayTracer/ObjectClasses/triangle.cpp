@@ -7,19 +7,9 @@
 
 #include "triangle.hpp"
 
-Triangle::Triangle()
-: Object(){
-    
+float Triangle::parameterize(const Vector3& origin, const Vector3& direction) const {
+    return INFINITY;
 }
 
-void Triangle::parameterize() {
-    
-}
-
-Triangle::Triangle(Vector3 position, Vector3 a, Vector3 b, Vector3 c, Material material)
-: Object(position){
-    this->a = a;
-    this->b = b;
-    this->c = c;
-    this->material = material;
-}
+Triangle::Triangle(const Vector3& position, const Vector3& a, const Vector3& b, const Vector3& c, const Material& material)
+: Object(position, material), a(a), b(b), c(c){}

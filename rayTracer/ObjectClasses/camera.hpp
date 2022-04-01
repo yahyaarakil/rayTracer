@@ -16,8 +16,10 @@ public:
     float left, right, bottom, top;
     float distance;
     int width, height;
+    
+    Camera();
         
-    void parameterize() override;
+    float parameterize(const Vector3&, const Vector3&) const override;
 };
 
 #endif /* camera_hpp */

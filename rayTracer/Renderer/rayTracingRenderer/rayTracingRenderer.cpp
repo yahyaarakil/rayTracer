@@ -18,14 +18,15 @@ int RayTracingRenderer::renderToImage() {
     for (int i = 0; i < this->scene.camera.height; ++i) {
         for (int j = 0; j < this->scene.camera.width; ++j) {
             Vector3 direction = this->rayGenerator.computeDirection(this->rayGenerator.computeS(i, j));
-            for (Sphere sphere : this->scene.spheres) {
-                float t = this->rayGenerator.computeTSphere(direction, sphere);
+            for (Object* object : this->scene.objects) {
+                float t = this->rayGenerator.computeTSphere(direction, *((Sphere*)object));
                 if (t > this->rayGenerator.t_min) {
                     this->imageGenerator.writeNextPixel(255, 255, 255);
                 }
                 else {
                     this->imageGenerator.writeNextPixel(this->scene.backgroundColor);
                 }
+                break;
             }
         }
     }
