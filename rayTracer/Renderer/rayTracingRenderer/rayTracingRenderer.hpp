@@ -25,7 +25,7 @@ public:
     int renderToImage() override;
     
     Vector3 determinePixelColor(const Vector3&, const Object&) const;
-    Hit castRay(const Vector3&, const Vector3&);
+    Hit castRay(const Vector3&, const Vector3&) const ;
 };
 
 #endif /* rayTracingRenderer_hpp */

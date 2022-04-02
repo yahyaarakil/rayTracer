@@ -20,8 +20,8 @@ public:
     Vector3 w, u, v, m, q;
     double su, sv, t_min, t_max;
 
-    Vector3 computeS(int, int) const;
-    Vector3 computeDirection(const Vector3&) const;
+//    Vector3 computeS(int, int) const;
+    Vector3 computeDirection(int, int) const;
     Vector3 computeR(double t, const Vector3&) const;
     
     void computeVectors();

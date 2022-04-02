@@ -53,13 +53,11 @@ void RayGenerator::computeVectors() {
     this->computeSuSv();
 }
 
-Vector3 RayGenerator::computeS(int i, int j) const {
-    return this->q + this->u * (this->su * (i+0.5f))  - this->v * (this->sv * (j+0.5f));
-}
-Vector3 RayGenerator::computeDirection(const Vector3& s) const {
+Vector3 RayGenerator::computeDirection(int i, int j) const {
+    Vector3 s = this->q + this->u * (this->su * (i+0.5f))  - this->v * (this->sv * (j+0.5f));
     Vector3 direction = s - this->position;
     
-//    return direction / direction.magnitude();
+    direction /= direction.magnitude();
     return direction;
 }
 Vector3 RayGenerator::computeR(double t, const Vector3& direction) const {

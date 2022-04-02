@@ -31,6 +31,6 @@ Sphere::Sphere(const Material& material, const Vector3& position, double radius)
 
 
 Vector3 Sphere::getNormal(const Vector3& point) const {
-    Vector3 norm = (point - this->position) *-1 / this->radius;
+    Vector3 norm = (point - this->position) / this->radius;
     return norm / norm.magnitude();
 }

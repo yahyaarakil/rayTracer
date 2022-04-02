@@ -34,7 +34,7 @@ double Triangle::parameterize(const Vector3& origin, const Vector3& direction) c
     double beta = getDeterminant(amo, amc, direction) / A;
     double gamma = getDeterminant(amb, amo, direction) / A;
     
-    if (beta + gamma < 1 && beta > 0 && gamma > 0 && t > 0) {
+    if (beta + gamma <= 1 && beta >= 0 && gamma >= 0 && t >= 0) {
         return t;
     }
     return INFINITY;
