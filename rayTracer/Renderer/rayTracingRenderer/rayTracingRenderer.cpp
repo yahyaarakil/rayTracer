@@ -49,7 +49,7 @@ Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const O
         eyeVector /= eyeVector.magnitude();
         Vector3 h = lightRay + eyeVector;
         h /= h.magnitude();
-        double alpha = fmax(normal ^ h, (double)0);
+        double alpha = fmax(normal ^ h, 0);
         Vector3 specular = intensity & hitObject.material.specular_reflectance;
         specular *= pow(alpha, hitObject.material.phong_exp);
 
