@@ -25,31 +25,30 @@ Hit RayTracingRenderer::castRay(const Vector3& origin, const Vector3& direction)
 }
 
 Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const Object& hitObject) const {
-//    Vector3 light = hitObject.material.ambient_reflectance & this->scene.ambientLight;
-//
-//    for (PointLight pointLight : this->scene.pointLights){
-//        Vector3 shadowRay = pointLight.position - hitPoint;
-//        double shadowRayMagnitude = shadowRay.magnitude();
-//
-//        Vector3 diffuseLight = (hitObject.material.diffuse_reflectance
-//                                * fmax(0.f, (shadowRay/shadowRayMagnitude) ^ hitObject.getNormal(hitPoint)))
-//        & (pointLight.intensity / (shadowRayMagnitude * shadowRayMagnitude));
-//        light += diffuseLight;
-//    }
-//
-//    return light;
+    // ambient
     Vector3 luminance = this->scene.ambientLight & hitObject.material.ambient_reflectance;
     Vector3 normal = hitObject.getNormal(hitPoint);
 
     for (PointLight light : this->scene.pointLights) {
         Vector3 lightRay = light.position - hitPoint;
         double lightRayMag = lightRay.magnitude();
+        lightRay /= lightRayMag;
         
+        // diffuse
         Vector3 diffuseLuminance = (hitObject.material.diffuse_reflectance
-        * fmax(0, (lightRay/lightRayMag) ^ normal))
+        * fmax(0, lightRay ^ normal))
         & (light.intensity / (lightRayMag * lightRayMag));
-        
+
         luminance += diffuseLuminance;
+
+        // specular
+        Vector3 e = (this->rayGenerator.position - hitPoint);
+        e /= e.magnitude();
+        Vector3 h = lightRay + e;
+        h /= h.magnitude();
+        Vector3 specular = hitObject.material.specular_reflectance * pow(normal ^ h, hitObject.material.phong_exp);
+
+        luminance += specular;
     }
     return luminance;
 }

@@ -16,7 +16,6 @@ std::ostream& operator<<(std::ostream& stream, const Vector3& vector){
 }
 
 int main(int argc, const char * argv[]) {
-    
     bool threading = true, ppm3 = true;
     // parsing arguments
     if (argc < 2) {
