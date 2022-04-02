@@ -10,7 +10,7 @@
 //int total = this->scene.camera.height * this->scene.camera.width;
 //int div = total / 10;
 //int current = 0, current10 = 1;
-//float percentage;
+//double percentage;
 
 Progress::Progress(int total)
 : total(total), divider(total/10), current(0), current10(1){

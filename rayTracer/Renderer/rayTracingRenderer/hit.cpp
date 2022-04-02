@@ -7,10 +7,10 @@
 
 #include "hit.hpp"
 
-Hit::Hit(float t, Object* object)
+Hit::Hit(double t, Object* object)
 : t(t), object(object){}
 
-float Hit::getT(){
+double Hit::getT(){
     return t;
 }
 Object* Hit::getObject(){

@@ -13,13 +13,13 @@
 class Camera : public Object{
 public:
     Vector3 gaze, up;
-    float left, right, bottom, top;
-    float distance;
+    double left, right, bottom, top;
+    double distance;
     int width, height;
     
     Camera();
         
-    float parameterize(const Vector3&, const Vector3&) const override;
+    double parameterize(const Vector3&, const Vector3&) const override;
 };
 
 #endif /* camera_hpp */

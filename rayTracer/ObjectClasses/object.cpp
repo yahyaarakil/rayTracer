@@ -9,3 +9,7 @@
 
 Object::Object(const Vector3& position, const Material& material)
 : position(position), material(material) {}
+
+Vector3 Object::getNormal(const Vector3& point) const {
+    return Vector3();
+}

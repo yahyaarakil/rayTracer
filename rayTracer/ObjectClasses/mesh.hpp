@@ -17,6 +17,6 @@ public:
     std::vector<Triangle*> triangles;
     
     Mesh(const Vector3&, const Material&);
-    float parameterize(const Vector3&, const Vector3&) const override;
+    double parameterize(const Vector3&, const Vector3&) const override;
 };
 #endif /* mesh_hpp */

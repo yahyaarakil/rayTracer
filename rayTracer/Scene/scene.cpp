@@ -104,23 +104,23 @@ void Scene::parseMaxRecursionDepth(const std::vector<std::string>& chunk){
     sscanf(chunk[1].c_str(), "%d\n", &(this->maxRecursionDepth));
 }
 void Scene::parseShadowRayEpsilon(const std::vector<std::string>& chunk){
-    sscanf(chunk[1].c_str(), "%f\n", &(this->shadowRayEpsilon));
+    sscanf(chunk[1].c_str(), "%lf\n", &(this->shadowRayEpsilon));
 }
 void Scene::parseCamera(const std::vector<std::string>& chunk){
     this->camera.position = parseVector3(chunk[1]);
     this->camera.gaze = parseVector3(chunk[2]);
     this->camera.up = parseVector3(chunk[3]);
     
-    sscanf(chunk[4].c_str(), "%f %f %f %f\n",
+    sscanf(chunk[4].c_str(), "%lf %lf %lf %lf\n",
            &(this->camera.left), &(this->camera.right), &(this->camera.bottom), &(this->camera.top));
-    sscanf(chunk[5].c_str(), "%f\n", &(this->camera.distance));
+    sscanf(chunk[5].c_str(), "%lf\n", &(this->camera.distance));
     sscanf(chunk[6].c_str(), "%d %d\n", &(this->camera.width), &(this->camera.height));
 }
 void Scene::parseMaterial(const std::vector<std::string>& chunk){
     int index;
-    float phong_exp;
+    double phong_exp;
     sscanf(chunk[1].c_str(), "%d\n", &index);
-    sscanf(chunk[5].c_str(), "%f\n", &phong_exp);
+    sscanf(chunk[5].c_str(), "%lf\n", &phong_exp);
 
     Material material(parseVector3(chunk[2]), parseVector3(chunk[3]),
                       parseVector3(chunk[4]), parseVector3(chunk[6]), phong_exp);
@@ -144,10 +144,10 @@ void Scene::parseVertexList(std::vector<std::string>& chunk){
 }
 void Scene::parseSphere(const std::vector<std::string>& chunk){
     int materialIndex, vertexIndex;
-    float radius;
+    double radius;
     sscanf(chunk[2].c_str(), "%d\n", &materialIndex);
     sscanf(chunk[3].c_str(), "%d\n", &vertexIndex);
-    sscanf(chunk[4].c_str(), "%f\n", &radius);
+    sscanf(chunk[4].c_str(), "%lf\n", &radius);
     this->objects.push_back(new Sphere(this->materials[materialIndex-1], this->vertexList[vertexIndex-1], radius));
 }
 void Scene::parseTriangle(const std::vector<std::string>& chunk){
@@ -161,25 +161,49 @@ void Scene::parseTriangle(const std::vector<std::string>& chunk){
                                        this->materials[materialIndex-1]));
     
 }
+//void Scene::parseMesh(std::vector<std::string>& chunk){
+//    int materialIndex;
+//    sscanf(chunk[2].c_str(), "%d\n", &materialIndex);
+//
+//    Vector3 position;
+//
+//    Mesh* mesh = new Mesh(position, this->materials[materialIndex-1]);
+//
+//    chunk.erase(chunk.begin());
+//    chunk.erase(chunk.begin());
+//    chunk.erase(chunk.begin());
+//
+//    for (std::string s : chunk) {
+//        Vector3 vertexIndices = parseVector3(s);
+//        mesh->triangles.push_back(new Triangle(position,
+//                                          this->vertexList[vertexIndices.x-1],
+//                                          this->vertexList[vertexIndices.y-1],
+//                                          this->vertexList[vertexIndices.z-1],
+//                                          this->materials[materialIndex-1]));
+//    }
+//    this->objects.push_back(mesh);
+//}
 void Scene::parseMesh(std::vector<std::string>& chunk){
     int materialIndex;
     sscanf(chunk[2].c_str(), "%d\n", &materialIndex);
     
     Vector3 position;
     
-    Mesh* mesh = new Mesh(position, this->materials[materialIndex-1]);
+//    Mesh* mesh = new Mesh(position, this->materials[materialIndex-1]);
     
     chunk.erase(chunk.begin());
     chunk.erase(chunk.begin());
     chunk.erase(chunk.begin());
     
-    for (std::string s : chunk) {
-        Vector3 vertexIndices = parseVector3(s);
-        mesh->triangles.push_back(new Triangle(position,
+    for (int i = 0; i < chunk.size() - 1; ++i) {
+        Vector3 vertexIndices = parseVector3(chunk[i]);
+        this->objects.push_back(new Triangle(position,
                                           this->vertexList[vertexIndices.x-1],
                                           this->vertexList[vertexIndices.y-1],
                                           this->vertexList[vertexIndices.z-1],
                                           this->materials[materialIndex-1]));
     }
-    this->objects.push_back(mesh);
+    
+//    for (std::string s : chunk) {
+//    }
 }

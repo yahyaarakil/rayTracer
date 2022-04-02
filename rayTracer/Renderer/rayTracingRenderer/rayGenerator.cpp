@@ -7,7 +7,7 @@
 
 #include "rayGenerator.hpp"
 
-RayGenerator::RayGenerator(Camera camera, float t_min, float t_max)
+RayGenerator::RayGenerator(Camera camera, double t_min, double t_max)
 : t_min(t_min), t_max(t_max){
     this->position = camera.position;
     this->gaze = camera.gaze;
@@ -57,8 +57,11 @@ Vector3 RayGenerator::computeS(int i, int j) const {
     return this->q + this->u * (this->su * (i+0.5f))  - this->v * (this->sv * (j+0.5f));
 }
 Vector3 RayGenerator::computeDirection(const Vector3& s) const {
-    return s - this->position;
+    Vector3 direction = s - this->position;
+    
+//    return direction / direction.magnitude();
+    return direction;
 }
-Vector3 RayGenerator::computeR(float t, const Vector3& direction) const {
+Vector3 RayGenerator::computeR(double t, const Vector3& direction) const {
     return this->position + direction * t;
 }

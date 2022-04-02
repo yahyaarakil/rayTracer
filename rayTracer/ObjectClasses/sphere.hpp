@@ -12,12 +12,13 @@
 
 class Sphere : public Object{
 public:
-    float radius;
+    double radius;
 
-    Sphere(const Material&, const Vector3&, float);
-    float parameterize(const Vector3&, const Vector3&) const override;
+    Sphere(const Material&, const Vector3&, double);
+    double parameterize(const Vector3&, const Vector3&) const override;
     
+    Vector3 getNormal(const Vector3&) const override;
 private:
-    float computeTiSphere(const Vector3&, const Vector3&, int) const;
+    double computeTiSphere(const Vector3&, const Vector3&, int) const;
 };
 #endif /* sphere_hpp */

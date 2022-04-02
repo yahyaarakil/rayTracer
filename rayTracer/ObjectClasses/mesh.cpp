@@ -10,8 +10,8 @@
 Mesh::Mesh(const Vector3& position, const Material& material)
 : Object (position, material) {}
 
-float Mesh::parameterize(const Vector3& origin, const Vector3& direction) const {
-    float min_t = INFINITY, t;
+double Mesh::parameterize(const Vector3& origin, const Vector3& direction) const {
+    double min_t = INFINITY, t;
     for (Triangle* triangle : this->triangles) {
         t = triangle->parameterize(origin, direction);
         

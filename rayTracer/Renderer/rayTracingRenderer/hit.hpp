@@ -12,14 +12,14 @@
 
 class Hit{
 private:
-    float t;
+    double t;
     Object* object;
     
 public:
     Hit() = delete;
-    Hit(float, Object*);
+    Hit(double, Object*);
     
-    float getT();
+    double getT();
     Object* getObject();
 };
 

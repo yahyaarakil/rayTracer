@@ -21,7 +21,8 @@ public:
     Object(const Vector3&, const Material&);
     virtual ~Object() = default;
     
-    virtual float parameterize(const Vector3&, const Vector3&) const = 0;
+    virtual double parameterize(const Vector3&, const Vector3&) const = 0;
+    virtual Vector3 getNormal(const Vector3&) const;
 };
 
 #endif /* object_hpp */

@@ -13,10 +13,11 @@
 
 class Triangle : public Object{
 public:
-    Vector3 a, b, c;
+    Vector3 a, b, c, normal;
     Triangle(const Vector3&, const Vector3&, const Vector3&, const Vector3&, const Material&);
-    float parameterize(const Vector3&, const Vector3&) const override;
+    double parameterize(const Vector3&, const Vector3&) const override;
     
-    Vector3 getNormal() const;
+    Vector3 getNormal(const Vector3&) const override;
+    void calculateNormal();
 };
 #endif /* triangle_hpp */

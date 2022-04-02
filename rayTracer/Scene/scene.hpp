@@ -32,7 +32,7 @@ public:
     Vector3 backgroundColor;
     Vector3 ambientLight;
     int maxRecursionDepth;
-    float shadowRayEpsilon;
+    double shadowRayEpsilon;
     void serializeToFile(const char*);
     void deserializeFromFile(const char*);
     

@@ -13,6 +13,6 @@
 
 unsigned long long int hashString(std::string);
 Vector3 parseVector3(const std::string&);
-float getDeterminant(const Vector3&, const Vector3&, const Vector3&);
+double getDeterminant(const Vector3&, const Vector3&, const Vector3&);
 
 #endif /* utilities_hpp */

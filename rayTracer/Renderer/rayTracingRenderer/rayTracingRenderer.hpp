@@ -20,11 +20,11 @@ public:
     int validationCode;
     
     RayTracingRenderer() = delete;
-    RayTracingRenderer(Scene&, float, float, ImageGenerator&);
+    RayTracingRenderer(Scene&, double, double, ImageGenerator&);
     
     int renderToImage() override;
     
-    Vector3 determinePixelColor(int, int);
+    Vector3 determinePixelColor(const Vector3&, const Object&) const;
     Hit castRay(const Vector3&, const Vector3&);
 };
 

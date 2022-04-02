@@ -13,9 +13,9 @@
 class Material{
 public:
     Vector3 ambient_reflectance, diffuse_reflectance, specular_reflectance, mirror_reflectance;
-    float phong_exp;
+    double phong_exp;
     
     Material();
-    Material(Vector3, Vector3, Vector3, Vector3, float);
+    Material(Vector3, Vector3, Vector3, Vector3, double);
 };
 #endif /* material_hpp */

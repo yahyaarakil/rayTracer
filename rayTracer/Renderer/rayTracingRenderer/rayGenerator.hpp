@@ -15,14 +15,14 @@
 class RayGenerator : public Camera {
 public:
     RayGenerator();
-    RayGenerator(Camera, float, float);
+    RayGenerator(Camera, double, double);
 
     Vector3 w, u, v, m, q;
-    float su, sv, t_min, t_max;
+    double su, sv, t_min, t_max;
 
     Vector3 computeS(int, int) const;
     Vector3 computeDirection(const Vector3&) const;
-    Vector3 computeR(float t, const Vector3&) const;
+    Vector3 computeR(double t, const Vector3&) const;
     
     void computeVectors();
 

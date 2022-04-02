@@ -7,9 +7,9 @@
 
 #include "triangle.hpp"
 
-//float Triangle::parameterize(const Vector3& origin, const Vector3& direction) const {
+//double Triangle::parameterize(const Vector3& origin, const Vector3& direction) const {
 //    Vector3 normal = this->getNormal();
-//    float t = ((this->a - origin) ^ normal) / (direction ^ normal);
+//    double t = ((this->a - origin) ^ normal) / (direction ^ normal);
 //
 //    if(t < 0)
 //        return INFINITY;
@@ -25,14 +25,14 @@
 //    return INFINITY;
 //}
 
-float Triangle::parameterize(const Vector3& origin, const Vector3& direction) const {
+double Triangle::parameterize(const Vector3& origin, const Vector3& direction) const {
     Vector3 amb = this->a - this->b;
     Vector3 amc = this->a - this->c;
     Vector3 amo = this->a - origin;
-    float A = getDeterminant(amb, amc, direction);
-    float t = getDeterminant(amb, amc, amo) / A;
-    float beta = getDeterminant(amo, amc, direction) / A;
-    float gamma = getDeterminant(amb, amo, direction) / A;
+    double A = getDeterminant(amb, amc, direction);
+    double t = getDeterminant(amb, amc, amo) / A;
+    double beta = getDeterminant(amo, amc, direction) / A;
+    double gamma = getDeterminant(amb, amo, direction) / A;
     
     if (beta + gamma < 1 && beta > 0 && gamma > 0 && t > 0) {
         return t;
@@ -41,8 +41,15 @@ float Triangle::parameterize(const Vector3& origin, const Vector3& direction) co
 }
 
 Triangle::Triangle(const Vector3& position, const Vector3& a, const Vector3& b, const Vector3& c, const Material& material)
-: Object(position, material), a(a), b(b), c(c){}
+: Object(position, material), a(a), b(b), c(c){
+    this->calculateNormal();
+}
 
-Vector3 Triangle::getNormal() const {
-    return (this->c - this->b) * (this->a - this->b);
+Vector3 Triangle::getNormal(const Vector3& point) const {
+    return this->normal;
+}
+
+void Triangle::calculateNormal() {
+    this->normal = (this->c - this->b) * (this->a - this->b);
+    this->normal /= this->normal.magnitude();
 }
