@@ -26,7 +26,7 @@ void Progress::update(){
         auto mseconds = duration_cast<std::chrono::milliseconds>(this->end - this->start);
         std::cout << "\b\b\bElapsed: "
         << minutes.count() << ":"
-        << seconds.count() << ":"
+        << seconds.count()%60 << ":"
         << mseconds.count()%1000
         << std::endl;
     }
