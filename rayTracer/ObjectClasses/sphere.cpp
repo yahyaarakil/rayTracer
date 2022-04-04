@@ -13,7 +13,7 @@ double Sphere::computeTiSphere(const Vector3& origin, const Vector3& direction, 
     double num = direction ^ omc;
     double uSqrt = sqrt(pow(direction ^ omc, 2) - dd * ((omc ^ omc) - pow(this->radius, 2)));
     
-    return ((num*-1) + (uSqrt*pm)) / dd;
+    return ((num *-1) + (uSqrt * pm)) / dd;
 }
 
 double Sphere::parameterize(const Vector3& origin, const Vector3& direction) const {

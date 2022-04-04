@@ -16,18 +16,20 @@ std::ostream& operator<<(std::ostream& stream, const Vector3& vector){
 }
 
 int main(int argc, const char * argv[]) {
-    bool threading = true, ppm3 = true;
+    bool ppm3 = true, output = false;
+    int oArg = -1;
     // parsing arguments
     if (argc < 2) {
         std::cout << "Invalid number of arguments!\nFormat Raytracer <input_file>" << std::endl;
         return -1;
     }
     for (int i = 2; i < argc; ++i) {
-        if (!strcmp(argv[i], "-no_threading")) {
-            threading = false;
-        }
-        else if (!strcmp(argv[i], "-ppm6")) {
+        if (!strcmp(argv[i], "-ppm6")) {
             ppm3 = false;
+        }
+        else if (!strcmp(argv[i], "-o")) {
+            output = true;
+            oArg = ++i;
         }
     }
 
@@ -62,8 +64,28 @@ int main(int argc, const char * argv[]) {
     std::cout << "Rendering finished" << std::endl;
     
     // write file
-    std::cout << "Writing render to file" << std::endl;
-    img->writeToFile("output1.ppm");
+    if (output) {
+        std::cout << "Writing render to file " << argv[oArg] << std::endl;
+        img->writeToFile(argv[oArg]);
+    }
+    else {
+        int outputNo = 0;
+        char filename[2000];
+        
+        while (true) {
+            sprintf(filename, "output%d.ppm", outputNo);
+            FILE *file = fopen(filename, "r");
+            if (file) {
+                fclose(file);
+                outputNo++;
+            }
+            else{
+                break;
+            }
+        }
+        std::cout << "Writing render to file " << filename << std::endl;
+        img->writeToFile(filename);
+    }
     std::cout << "Writing finished" << std::endl;
     
     // clean up and exit

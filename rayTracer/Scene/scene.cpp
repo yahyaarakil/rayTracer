@@ -15,6 +15,13 @@ Scene::Scene(const char* filename){
     this->deserializeFromFile(filename);
 }
 
+Scene::~Scene(){
+    for (Object* object : this->objects)
+        delete object;
+    for (PointLight* light : this->pointLights)
+        delete light;
+}
+
 void Scene::serializeToFile(const char* filename){
     
 }
@@ -133,8 +140,7 @@ void Scene::parseAmbientLight(const std::vector<std::string>& chunk){
 void Scene::parsePointLight(const std::vector<std::string>& chunk){
     int index;
     sscanf(chunk[1].c_str(), "%d\n", &index);
-    PointLight pointLight(parseVector3(chunk[2]), parseVector3(chunk[3]));
-    this->pointLights.push_back(pointLight);
+    this->pointLights.push_back(new PointLight(parseVector3(chunk[2]), parseVector3(chunk[3])));
 }
 void Scene::parseVertexList(std::vector<std::string>& chunk){
     chunk.erase(chunk.begin());

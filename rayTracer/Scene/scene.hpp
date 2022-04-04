@@ -38,10 +38,11 @@ public:
     
     std::vector<Material> materials;
     std::vector<Vector3> vertexList;
-    std::vector<PointLight> pointLights;
+    std::vector<PointLight*> pointLights;
     std::vector<Object*> objects;
     
     Scene();
+    ~Scene();
     Scene(const char*);
     
 private:

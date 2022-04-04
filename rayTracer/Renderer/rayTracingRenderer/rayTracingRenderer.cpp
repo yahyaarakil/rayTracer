@@ -31,8 +31,8 @@ Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const O
     Vector3 eyeVector = this->rayGenerator.position - hitPoint;
     eyeVector /= eyeVector.magnitude();
 
-    for (PointLight light : this->scene.pointLights) {
-        Vector3 lightRay = light.position - hitPoint;
+    for (PointLight* light : this->scene.pointLights) {
+        Vector3 lightRay = light->position - hitPoint;
         double lightRayMag = lightRay.magnitude();
         lightRay /= lightRayMag;
         
@@ -42,11 +42,12 @@ Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const O
                 continue;
             }
         }
-        Vector3 intensity = light.intensity / (lightRayMag*lightRayMag);
+        Vector3 intensity = light->intensity / (lightRayMag*lightRayMag);
         
         // compute diffuse
         Vector3 diffuse = (intensity & hitObject.material.diffuse_reflectance
                            * fmax(lightRay ^ normal, 0));
+        luminance += diffuse;
 
         // compute specular
         Vector3 halfVector = lightRay + eyeVector;
@@ -55,12 +56,11 @@ Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const O
         Vector3 specular = intensity & hitObject.material.specular_reflectance;
         specular *= pow(alpha, hitObject.material.phong_exp);
 
-        luminance += specular + diffuse;
+        luminance += specular;
     }
     
     if(pass > 0){
-        Vector3 reflectionRay = eyeVector *-1;
-        reflectionRay += (normal * 2)*(normal ^ (eyeVector));
+        Vector3 reflectionRay = (eyeVector *-1) + (normal * 2) * (normal ^ (eyeVector));
         reflectionRay /= reflectionRay.magnitude();
 
         Hit reflectionRayCollision = this->castRay(hitPoint + reflectionRay * this->scene.shadowRayEpsilon, reflectionRay);
@@ -87,7 +87,6 @@ int RayTracingRenderer::renderToImage() {
             if (hit.getObject() != NULL) {
                 Vector3 color = this->determinePixelColor(direction * hit.getT() + this->rayGenerator.position, *(hit.getObject()), this->scene.maxRecursionDepth);
                 this->imageGenerator.writeNextPixel(color);
-//                this->imageGenerator.writeNextPixel(Vector3(255, 255, 255));
             }
             else {
                 this->imageGenerator.writeNextPixel(this->scene.backgroundColor);
