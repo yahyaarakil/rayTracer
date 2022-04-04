@@ -10,20 +10,26 @@
 double Sphere::computeTiSphere(const Vector3& origin, const Vector3& direction, int pm) const {
     double dd = direction ^ direction;
     Vector3 omc = origin - this->position;
-    double num = (direction * -1) ^ omc;
+    double num = direction ^ omc;
     double uSqrt = sqrt(pow(direction ^ omc, 2) - dd * ((omc ^ omc) - pow(this->radius, 2)));
     
-    uSqrt *= pm;
-    
-    return (num + uSqrt) / dd;
+    return ((num*-1) + (uSqrt*pm)) / dd;
 }
 
 double Sphere::parameterize(const Vector3& origin, const Vector3& direction) const {
     double t1, t2;
     t1 = this->computeTiSphere(origin, direction, 1);
     t2 = this->computeTiSphere(origin, direction, -1);
-    
-    return fmin(t1, t2);
+
+    if (t1 < 0) {
+        return t2;
+    }
+    else if (t2 < 0){
+        return t1;
+    }
+    else{
+        return fmin(t1, t2);
+    }
 }
 
 Sphere::Sphere(const Material& material, const Vector3& position, double radius)
@@ -31,6 +37,5 @@ Sphere::Sphere(const Material& material, const Vector3& position, double radius)
 
 
 Vector3 Sphere::getNormal(const Vector3& point) const {
-    Vector3 norm = (point - this->position) / this->radius;
-    return norm / norm.magnitude();
+    return (point - this->position) / this->radius;
 }

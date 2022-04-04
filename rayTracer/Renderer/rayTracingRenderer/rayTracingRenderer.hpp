@@ -24,7 +24,7 @@ public:
     
     int renderToImage() override;
     
-    Vector3 determinePixelColor(const Vector3&, const Object&) const;
+    Vector3 determinePixelColor(const Vector3&, const Object&, int) const;
     Hit castRay(const Vector3&, const Vector3&) const ;
 };
 

@@ -16,7 +16,7 @@ Hit RayTracingRenderer::castRay(const Vector3& origin, const Vector3& direction)
     for (Object* object : this->scene.objects) {
         t = object->parameterize(origin, direction);
         
-        if (t < min_t){
+        if (t < min_t && t >= 0){
             objectP = object;
             min_t = t;
         }
@@ -24,10 +24,12 @@ Hit RayTracingRenderer::castRay(const Vector3& origin, const Vector3& direction)
     return Hit(min_t, objectP);
 }
 
-Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const Object& hitObject) const {
+Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const Object& hitObject, int pass) const {
     // ambient
     Vector3 luminance = this->scene.ambientLight & hitObject.material.ambient_reflectance;
     Vector3 normal = hitObject.getNormal(hitPoint);
+    Vector3 eyeVector = this->rayGenerator.position - hitPoint;
+    eyeVector /= eyeVector.magnitude();
 
     for (PointLight light : this->scene.pointLights) {
         Vector3 lightRay = light.position - hitPoint;
@@ -35,8 +37,10 @@ Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const O
         lightRay /= lightRayMag;
         
         Hit lightRayCollision = this->castRay(hitPoint + lightRay * this->scene.shadowRayEpsilon, lightRay);
-        if (lightRayCollision.getObject() != NULL && lightRayCollision.getT() > 0 && (lightRay * lightRayCollision.getT()).magnitude() < lightRayMag) {
-            continue;
+        if (lightRayCollision.getObject() != NULL) {
+            if ((lightRay * lightRayCollision.getT()).magnitude() < lightRayMag) {
+                continue;
+            }
         }
         Vector3 intensity = light.intensity / (lightRayMag*lightRayMag);
         
@@ -45,16 +49,27 @@ Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const O
                            * fmax(lightRay ^ normal, 0));
 
         // compute specular
-        Vector3 eyeVector = this->rayGenerator.position - hitPoint;
-        eyeVector /= eyeVector.magnitude();
-        Vector3 h = lightRay + eyeVector;
-        h /= h.magnitude();
-        double alpha = fmax(normal ^ h, 0);
+        Vector3 halfVector = lightRay + eyeVector;
+        halfVector /= halfVector.magnitude();
+        double alpha = fmax(normal ^ halfVector, 0);
         Vector3 specular = intensity & hitObject.material.specular_reflectance;
         specular *= pow(alpha, hitObject.material.phong_exp);
 
         luminance += specular + diffuse;
     }
+    
+    if(pass > 0){
+        Vector3 reflectionRay = eyeVector *-1;
+        reflectionRay += (normal * 2)*(normal ^ (eyeVector));
+        reflectionRay /= reflectionRay.magnitude();
+
+        Hit reflectionRayCollision = this->castRay(hitPoint + reflectionRay * this->scene.shadowRayEpsilon, reflectionRay);
+        if (reflectionRayCollision.getObject() != NULL) {
+            luminance += hitObject.material.mirror_reflectance
+            & this->determinePixelColor(reflectionRay * reflectionRayCollision.getT() + hitPoint, *(reflectionRayCollision.getObject()), pass - 1);
+        }
+    }
+    
     luminance.x = fmin(255, fmax(luminance.x, 0));
     luminance.y = fmin(255, fmax(luminance.y, 0));
     luminance.z = fmin(255, fmax(luminance.z, 0));
@@ -70,7 +85,7 @@ int RayTracingRenderer::renderToImage() {
             Hit hit = this->castRay(this->rayGenerator.position, direction);
             
             if (hit.getObject() != NULL) {
-                Vector3 color = this->determinePixelColor(direction * hit.getT() + this->rayGenerator.position, *(hit.getObject()));
+                Vector3 color = this->determinePixelColor(direction * hit.getT() + this->rayGenerator.position, *(hit.getObject()), this->scene.maxRecursionDepth);
                 this->imageGenerator.writeNextPixel(color);
 //                this->imageGenerator.writeNextPixel(Vector3(255, 255, 255));
             }
