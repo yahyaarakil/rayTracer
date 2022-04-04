@@ -16,7 +16,7 @@ Hit RayTracingRenderer::castRay(const Vector3& origin, const Vector3& direction)
     for (Object* object : this->scene.objects) {
         t = object->parameterize(origin, direction);
         
-        if (t < min_t && t >= 0){
+        if (t < min_t && t > 0){
             objectP = object;
             min_t = t;
         }
@@ -81,7 +81,7 @@ int RayTracingRenderer::renderToImage() {
     for (int i = 0; i < this->scene.camera.height; ++i) {
         for (int j = 0; j < this->scene.camera.width; ++j) {
             
-            Vector3 direction = this->rayGenerator.computeDirection(i, j);
+            Vector3 direction = this->rayGenerator.computeDirection(j, i);
             Hit hit = this->castRay(this->rayGenerator.position, direction);
             
             if (hit.getObject() != NULL) {

@@ -31,7 +31,7 @@ int PPM3File::writeToFile(const char* filename){
     for (int i = 0; i < this->height; i++) {
         for (int j = 0; j < this->width; j++) {
             for (int c = 0; c < 3; c++) {
-                fprintf(filestream, "%d ", this->accessBuffer(i, j, c));
+                fprintf(filestream, "%d ", this->accessBuffer(j, i, c));
             }
         }
         fprintf(filestream, "\n");
@@ -57,16 +57,7 @@ int PPM3File::writeNextPixel(int r, int g, int b){
     return -1;
 }
 int PPM3File::writeNextPixel(const Vector3& color){
-    if (this->currentIndex < this->bufferSize) {
-        this->buffer[this->currentIndex] = color.x;
-        this->buffer[this->currentIndex + 1] = color.y;
-        this->buffer[this->currentIndex + 2] = color.z;
-        
-        this->currentIndex += 3;
-        
-        return 0;
-    }
-    return -1;
+    return this->writeNextPixel(color.x, color.y, color.z);
 }
 
 int PPM3File::resetCursor(){
