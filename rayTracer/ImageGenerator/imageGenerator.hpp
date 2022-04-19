@@ -8,7 +8,7 @@
 #ifndef imageGenerator_hpp
 #define imageGenerator_hpp
 
-#include "vector3.hpp"
+#include "../Utilities/vector3.hpp"
 
 class ImageGenerator {
 public:

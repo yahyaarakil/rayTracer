@@ -8,7 +8,7 @@
 #ifndef ppm3_hpp
 #define ppm3_hpp
 
-#include "imageGenerator.hpp"
+#include "../imageGenerator.hpp"
 #include <fstream>
 
 #define PPM3COMMENT "Yahya Arakil"

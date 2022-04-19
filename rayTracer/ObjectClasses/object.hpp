@@ -8,8 +8,8 @@
 #ifndef object_hpp
 #define object_hpp
 
-#include "vector3.hpp"
-#include "material.hpp"
+#include "../Utilities/vector3.hpp"
+#include "../MaterialClasses/material.hpp"
 #include <cmath>
 
 class Object{

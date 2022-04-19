@@ -8,7 +8,7 @@
 #ifndef vector3_hpp
 #define vector3_hpp
 
-#include <iostream>
+#include <cmath>
 
 class Vector3{
 public:

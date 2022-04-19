@@ -8,15 +8,14 @@
 #ifndef scene_hpp
 #define scene_hpp
 
-#include "vector3.hpp"
-#include "object.hpp"
-#include "camera.hpp"
-#include "material.hpp"
-#include "pointLight.hpp"
-#include "sphere.hpp"
-#include "triangle.hpp"
-#include "mesh.hpp"
-#include "utilities.hpp"
+#include "../Utilities/vector3.hpp"
+#include "../ObjectClasses/object.hpp"
+#include "../ObjectClasses/camera.hpp"
+#include "../MaterialClasses/material.hpp"
+#include "../ObjectClasses/pointLight.hpp"
+#include "../ObjectClasses/sphere.hpp"
+#include "../ObjectClasses/triangle.hpp"
+#include "../Utilities/utilities.hpp"
 #include <vector>
 #include <stdio.h>
 #include <map>

@@ -9,10 +9,6 @@
 
 Material::Material(){}
 Material::Material(Vector3 ambient_reflectance, Vector3 diffuse_reflectance,
-                   Vector3 specular_reflectance, Vector3 mirror_reflectance, double phong_exp){
-    this->ambient_reflectance = ambient_reflectance;
-    this->diffuse_reflectance = diffuse_reflectance;
-    this->specular_reflectance = specular_reflectance;
-    this->mirror_reflectance = mirror_reflectance;
-    this->phong_exp = phong_exp;
-}
+                   Vector3 specular_reflectance, Vector3 mirror_reflectance, double phong_exp)
+: ambient_reflectance(ambient_reflectance), diffuse_reflectance(diffuse_reflectance),
+  specular_reflectance(specular_reflectance), mirror_reflectance(mirror_reflectance), phong_exp(phong_exp) {}

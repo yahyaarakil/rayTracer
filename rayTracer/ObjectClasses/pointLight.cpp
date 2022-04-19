@@ -11,5 +11,5 @@ PointLight::PointLight(const Vector3& position, const Vector3& intensity)
 : Object (position, Material()), intensity(intensity) {}
 
 double PointLight::parameterize(const Vector3& origin, const Vector3& direction) const {
-    return INFINITY;
+    return -1;
 }

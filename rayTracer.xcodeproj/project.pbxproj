@@ -16,11 +16,9 @@
 		6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9A27F481D100018DCA /* rayGenerator.cpp */; };
 		6B5F6AA027F48F8800018DCA /* ppm3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6A9E27F48F8800018DCA /* ppm3.cpp */; };
 		6B5F6AA827F4AA8300018DCA /* renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AA727F4AA8300018DCA /* renderer.cpp */; };
-		6B5F6AAE27F4D49000018DCA /* ppm6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AAC27F4D49000018DCA /* ppm6.cpp */; };
 		6B5F6ABE27F7595300018DCA /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AB427F7595300018DCA /* triangle.cpp */; };
 		6B5F6ABF27F7595300018DCA /* pointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AB527F7595300018DCA /* pointLight.cpp */; };
 		6B5F6AC027F7595300018DCA /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AB827F7595300018DCA /* camera.cpp */; };
-		6B5F6AC127F7595300018DCA /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AB927F7595300018DCA /* mesh.cpp */; };
 		6B5F6AC227F7595300018DCA /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6ABA27F7595300018DCA /* object.cpp */; };
 		6B5F6AC327F7595300018DCA /* sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6ABC27F7595300018DCA /* sphere.cpp */; };
 		6B5F6AC627F75C7500018DCA /* hit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F6AC427F75C7400018DCA /* hit.cpp */; };
@@ -59,16 +57,12 @@
 		6B5F6AA227F4A57600018DCA /* renderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = renderer.hpp; sourceTree = "<group>"; };
 		6B5F6AA527F4A5C600018DCA /* imageGenerator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = imageGenerator.hpp; sourceTree = "<group>"; };
 		6B5F6AA727F4AA8300018DCA /* renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = renderer.cpp; sourceTree = "<group>"; };
-		6B5F6AAC27F4D49000018DCA /* ppm6.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ppm6.cpp; sourceTree = "<group>"; };
-		6B5F6AAD27F4D49000018DCA /* ppm6.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ppm6.hpp; sourceTree = "<group>"; };
 		6B5F6AB227F7595200018DCA /* triangle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = triangle.hpp; sourceTree = "<group>"; };
 		6B5F6AB327F7595200018DCA /* camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = camera.hpp; sourceTree = "<group>"; };
 		6B5F6AB427F7595300018DCA /* triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangle.cpp; sourceTree = "<group>"; };
 		6B5F6AB527F7595300018DCA /* pointLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pointLight.cpp; sourceTree = "<group>"; };
-		6B5F6AB627F7595300018DCA /* mesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mesh.hpp; sourceTree = "<group>"; };
 		6B5F6AB727F7595300018DCA /* object.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = object.hpp; sourceTree = "<group>"; };
 		6B5F6AB827F7595300018DCA /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
-		6B5F6AB927F7595300018DCA /* mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mesh.cpp; sourceTree = "<group>"; };
 		6B5F6ABA27F7595300018DCA /* object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = object.cpp; sourceTree = "<group>"; };
 		6B5F6ABB27F7595300018DCA /* pointLight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pointLight.hpp; sourceTree = "<group>"; };
 		6B5F6ABC27F7595300018DCA /* sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sphere.cpp; sourceTree = "<group>"; };
@@ -125,8 +119,6 @@
 			children = (
 				6B5F6AB827F7595300018DCA /* camera.cpp */,
 				6B5F6AB327F7595200018DCA /* camera.hpp */,
-				6B5F6AB927F7595300018DCA /* mesh.cpp */,
-				6B5F6AB627F7595300018DCA /* mesh.hpp */,
 				6B5F6ABA27F7595300018DCA /* object.cpp */,
 				6B5F6AB727F7595300018DCA /* object.hpp */,
 				6B5F6AB527F7595300018DCA /* pointLight.cpp */,
@@ -183,7 +175,6 @@
 		6B5F6A9D27F48F6E00018DCA /* ImageGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				6B5F6AAB27F4D47C00018DCA /* ppm6 */,
 				6B5F6AAA27F4D47100018DCA /* ppm3 */,
 				6B5F6AA527F4A5C600018DCA /* imageGenerator.hpp */,
 			);
@@ -210,15 +201,6 @@
 				6B5F6A9F27F48F8800018DCA /* ppm3.hpp */,
 			);
 			path = ppm3;
-			sourceTree = "<group>";
-		};
-		6B5F6AAB27F4D47C00018DCA /* ppm6 */ = {
-			isa = PBXGroup;
-			children = (
-				6B5F6AAC27F4D49000018DCA /* ppm6.cpp */,
-				6B5F6AAD27F4D49000018DCA /* ppm6.hpp */,
-			);
-			path = ppm6;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,12 +268,10 @@
 				6B5F6AC227F7595300018DCA /* object.cpp in Sources */,
 				6B5F6AA827F4AA8300018DCA /* renderer.cpp in Sources */,
 				6B5F6A7527F19B7200018DCA /* vector3.cpp in Sources */,
-				6B5F6AC127F7595300018DCA /* mesh.cpp in Sources */,
 				6B5F6ABF27F7595300018DCA /* pointLight.cpp in Sources */,
 				6B5F6A9C27F481D100018DCA /* rayGenerator.cpp in Sources */,
 				6B5F6A7F27F22B6000018DCA /* utilities.cpp in Sources */,
 				6B5F6AC627F75C7500018DCA /* hit.cpp in Sources */,
-				6B5F6AAE27F4D49000018DCA /* ppm6.cpp in Sources */,
 				6B5F6A9927F4521D00018DCA /* rayTracingRenderer.cpp in Sources */,
 				6B5F6AA027F48F8800018DCA /* ppm3.cpp in Sources */,
 				6B5F6ABE27F7595300018DCA /* triangle.cpp in Sources */,

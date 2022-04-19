@@ -10,5 +10,5 @@
 Camera::Camera()
 : Object(Vector3(0, 0, 0), Material()) {}
 double Camera::parameterize(const Vector3& origin, const Vector3& direction) const {
-    return INFINITY;
+    return -1;
 }

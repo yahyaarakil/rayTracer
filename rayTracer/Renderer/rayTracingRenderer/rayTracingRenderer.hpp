@@ -8,11 +8,11 @@
 #ifndef rayTracingRenderer_hpp
 #define rayTracingRenderer_hpp
 
-#include "renderer.hpp"
+#include "../renderer.hpp"
 #include "rayGenerator.hpp"
-#include "scene.hpp"
+#include "../../Scene/scene.hpp"
 #include "hit.hpp"
-#include "progress.hpp"
+#include "../../Utilities/progress.hpp"
 
 class RayTracingRenderer : Renderer{
 public:

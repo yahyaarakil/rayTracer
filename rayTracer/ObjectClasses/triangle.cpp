@@ -37,7 +37,7 @@ double Triangle::parameterize(const Vector3& origin, const Vector3& direction) c
     if (beta + gamma <= 1 && beta >= 0 && gamma >= 0 && t >= 0) {
         return t;
     }
-    return INFINITY;
+    return -1;
 }
 
 Triangle::Triangle(const Vector3& position, const Vector3& a, const Vector3& b, const Vector3& c, const Material& material)

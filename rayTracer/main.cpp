@@ -6,9 +6,8 @@
 //
 
 #include <iostream>
-#include "rayTracingRenderer.hpp"
-#include "ppm3.hpp"
-#include "ppm6.hpp"
+#include "Renderer/rayTracingRenderer/rayTracingRenderer.hpp"
+#include "ImageGenerator/ppm3/ppm3.hpp"
 
 std::ostream& operator<<(std::ostream& stream, const Vector3& vector){
     stream << "<" << vector.x << ", " << vector.y << ", " << vector.z << ">";
@@ -24,10 +23,10 @@ int main(int argc, const char * argv[]) {
         return -1;
     }
     for (int i = 2; i < argc; ++i) {
-        if (!strcmp(argv[i], "-ppm6")) {
-            ppm3 = false;
-        }
-        else if (!strcmp(argv[i], "-o")) {
+//        if (!strcmp(argv[i], "-ppm6")) {
+//            ppm3 = false;
+//        }
+        if (!strcmp(argv[i], "-o")) {
             output = true;
             oArg = ++i;
         }
@@ -44,13 +43,13 @@ int main(int argc, const char * argv[]) {
 
     // initializing ray tracing renderer
     std::cout << "Initializing RayTracing Renderer" << std::endl;
-    PPM3File* img;
-    if (ppm3) {
-        img = new PPM3File(scene.camera.width, scene.camera.height, IN_MEMORY);
-    }
-    else {
-        img = new PPM6File(scene.camera.width, scene.camera.height, IN_MEMORY);
-    }
+    PPM3File* img = new PPM3File(scene.camera.width, scene.camera.height, IN_MEMORY);;
+//    if (ppm3) {
+//        img = new PPM3File(scene.camera.width, scene.camera.height, IN_MEMORY);
+//    }
+//    else {
+//        img = new PPM6File(scene.camera.width, scene.camera.height, IN_MEMORY);
+//    }
     RayTracingRenderer renderer(scene, 0, INFINITY, *img);
     if (renderer.validationCode != 0) {
         std::cout << "Failed to initialize renderer" << std::endl;
@@ -90,5 +89,6 @@ int main(int argc, const char * argv[]) {
     
     // clean up and exit
     std::cout << "Exiting..." << std::endl;
+    delete img;
     return 0;
 }

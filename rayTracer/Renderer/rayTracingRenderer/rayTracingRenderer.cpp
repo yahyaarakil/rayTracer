@@ -30,6 +30,17 @@ Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const O
     Vector3 normal = hitObject.getNormal(hitPoint);
     Vector3 eyeVector = this->rayGenerator.position - hitPoint;
     eyeVector /= eyeVector.magnitude();
+    
+    if(pass > -1){
+        Vector3 reflectionRay = (eyeVector *-1) + (normal * 2) * (normal ^ (eyeVector));
+        reflectionRay /= reflectionRay.magnitude();
+
+        Hit reflectionRayCollision = this->castRay(hitPoint + reflectionRay * this->scene.shadowRayEpsilon, reflectionRay);
+        if (reflectionRayCollision.getObject() != NULL) {
+            luminance += hitObject.material.mirror_reflectance
+            & this->determinePixelColor(reflectionRay * reflectionRayCollision.getT() + hitPoint, *(reflectionRayCollision.getObject()), pass - 1);
+        }
+    }
 
     for (PointLight* light : this->scene.pointLights) {
         Vector3 lightRay = light->position - hitPoint;
@@ -52,22 +63,10 @@ Vector3 RayTracingRenderer::determinePixelColor(const Vector3& hitPoint, const O
         // compute specular
         Vector3 halfVector = lightRay + eyeVector;
         halfVector /= halfVector.magnitude();
-        double alpha = fmax(normal ^ halfVector, 0);
         Vector3 specular = intensity & hitObject.material.specular_reflectance;
-        specular *= pow(alpha, hitObject.material.phong_exp);
+        specular *= pow(normal ^ halfVector, hitObject.material.phong_exp);
 
         luminance += specular;
-    }
-    
-    if(pass > 0){
-        Vector3 reflectionRay = (eyeVector *-1) + (normal * 2) * (normal ^ (eyeVector));
-        reflectionRay /= reflectionRay.magnitude();
-
-        Hit reflectionRayCollision = this->castRay(hitPoint + reflectionRay * this->scene.shadowRayEpsilon, reflectionRay);
-        if (reflectionRayCollision.getObject() != NULL) {
-            luminance += hitObject.material.mirror_reflectance
-            & this->determinePixelColor(reflectionRay * reflectionRayCollision.getT() + hitPoint, *(reflectionRayCollision.getObject()), pass - 1);
-        }
     }
     
     luminance.x = fmin(255, fmax(luminance.x, 0));

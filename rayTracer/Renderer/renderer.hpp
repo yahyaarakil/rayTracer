@@ -8,7 +8,7 @@
 #ifndef renderer_hpp
 #define renderer_hpp
 
-#include "imageGenerator.hpp"
+#include "../ImageGenerator/imageGenerator.hpp"
 #include "scene.hpp"
 
 class Renderer {

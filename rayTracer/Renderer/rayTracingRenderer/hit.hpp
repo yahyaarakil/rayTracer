@@ -8,7 +8,7 @@
 #ifndef hit_hpp
 #define hit_hpp
 
-#include "object.hpp"
+#include "../../ObjectClasses/object.hpp"
 
 class Hit{
 private:

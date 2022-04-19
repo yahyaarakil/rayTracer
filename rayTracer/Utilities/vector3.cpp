@@ -6,7 +6,6 @@
 //
 
 #include "vector3.hpp"
-#include <cmath>
 
 Vector3::Vector3(){
     this->x = 0;
